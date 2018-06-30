@@ -43,38 +43,29 @@ Blockly.Velocity = new Blockly.Generator('Velocity');
  * @private
  */
 Blockly.Velocity.addReservedWords(
-    'Blockly,' +  // In case JS is evaled in the current window.
-        // http://Velocity.net/manual/en/reserved.keywords.Velocity
-    '__halt_compiler,abstract,and,array,as,break,callable,case,catch,class,clone,const,continue,declare,default,die,do,echo,else,elseif,empty,enddeclare,endfor,endforeach,endif,endswitch,endwhile,eval,exit,extends,final,for,foreach,function,global,goto,if,implements,include,include_once,instanceof,insteadof,interface,isset,list,namespace,new,or,print,private,protected,public,require,require_once,return,static,switch,throw,trait,try,unset,use,var,while,xor,' +
-        // http://Velocity.net/manual/en/reserved.constants.Velocity
-    'Velocity_VERSION,Velocity_MAJOR_VERSION,Velocity_MINOR_VERSION,Velocity_RELEASE_VERSION,Velocity_VERSION_ID,Velocity_EXTRA_VERSION,Velocity_ZTS,Velocity_DEBUG,Velocity_MAXPATHLEN,Velocity_OS,Velocity_SAPI,Velocity_EOL,Velocity_INT_MAX,Velocity_INT_SIZE,DEFAULT_INCLUDE_PATH,PEAR_INSTALL_DIR,PEAR_EXTENSION_DIR,Velocity_EXTENSION_DIR,Velocity_PREFIX,Velocity_BINDIR,Velocity_BINARY,Velocity_MANDIR,Velocity_LIBDIR,Velocity_DATADIR,Velocity_SYSCONFDIR,Velocity_LOCALSTATEDIR,Velocity_CONFIG_FILE_PATH,Velocity_CONFIG_FILE_SCAN_DIR,Velocity_SHLIB_SUFFIX,E_ERROR,E_WARNING,E_PARSE,E_NOTICE,E_CORE_ERROR,E_CORE_WARNING,E_COMPILE_ERROR,E_COMPILE_WARNING,E_USER_ERROR,E_USER_WARNING,E_USER_NOTICE,E_DEPRECATED,E_USER_DEPRECATED,E_ALL,E_STRICT,__COMPILER_HALT_OFFSET__,TRUE,FALSE,NULL,__CLASS__,__DIR__,__FILE__,__FUNCTION__,__LINE__,__METHOD__,__NAMESPACE__,__TRAIT__');
-        // there are more than 9,000 internal functions in http://Velocity.net/manual/en/indexes.functions.Velocity
-        // do we really need to list them here?
+    'Blockly,' +  // In case Velocity is evaled in the current window.
+        // http://velocity.apache.org/engine/1.7/user-guide.html
+    '#break,#define,#else,#elsif,#end,#evaluate,#foreach,#if,#include,#parse,#set,#stop,#macro,$collectionstool,$datetool,$escapetool,$jsontool,$listtool,$mathtool,$msg,$numbertool$regextool,$sorttool,$stringtool,$urltool,$exceptiontool,$niotool' +
+    'true, false');
 
 /**
  * Order of operation ENUMs.
  * https://docs.oracle.com/javase/tutorial/java/nutsandbolts/operators.html
  */
 Blockly.Velocity.ORDER_ATOMIC = 0;         // 0 "" ...
-Blockly.Velocity.ORDER_MEMBER = 0.9;   
-Blockly.Velocity.ORDER_UNARY_POSTFIX = 1;  // expr++ expr-- () [] . ?.
-Blockly.Velocity.ORDER_UNARY_PREFIX = 2;   // -expr !expr ~expr ++expr --expr
+Blockly.Velocity.ORDER_MEMBER = 0.9;
 Blockly.Velocity.ORDER_UNARY_FUNCTION_CALL = 2.5; 
 Blockly.Velocity.ORDER_UNARY_NEGATION = 2.5; 
 Blockly.Velocity.ORDER_MULTIPLICATION = 3; // * / % ~/
 Blockly.Velocity.ORDER_DIVISION = 3;
 Blockly.Velocity.ORDER_ADDITION = 4;
-Blockly.Velocity.ORDER_SUBTRACTION = 4;       // + -
-Blockly.Velocity.ORDER_SHIFT = 5;          // << >>
+Blockly.Velocity.ORDER_SUBTRACTION = 4;
 Blockly.Velocity.ORDER_RELATIONAL = 6;     // >= > <= < as is is!
 Blockly.Velocity.ORDER_EQUALITY = 7;      // == !=
-Blockly.Velocity.ORDER_BITWISE_AND = 8;    // &
-Blockly.Velocity.ORDER_BITWISE_XOR = 9;    // ^
 Blockly.Velocity.ORDER_BITWISE_OR = 10;     // |
 Blockly.Velocity.ORDER_LOGICAL_AND = 11;   // &&
 Blockly.Velocity.ORDER_LOGICAL_OR = 12;    // ||
-Blockly.Velocity.ORDER_CONDITIONAL = 13;   // expr ? expr : expr
-Blockly.Velocity.ORDER_ASSIGNMENT = 14;    // = *= /= ~/= %= += -= <<= >>= &= ^= |=
+Blockly.Velocity.ORDER_ASSIGNMENT = 14;    // =
 Blockly.Velocity.ORDER_NONE = 99;          // (...)
 
 /**
@@ -98,9 +89,9 @@ Blockly.Velocity.init = function(workspace) {
   var defvars = [];
   var variables = Blockly.Variables.allVariables(workspace);
   for (var x = 0; x < variables.length; x++) {
-    defvars[x] = 'var ' +
+    defvars[x] = '#set( ' +
         Blockly.Velocity.variableDB_.getName(variables[x],
-        Blockly.Variables.NAME_TYPE) + ';';
+        Blockly.Variables.NAME_TYPE) + ')';
   }
   Blockly.Velocity.definitions_['variables'] = defvars.join('\n');
 };
@@ -126,7 +117,7 @@ Blockly.Velocity.finish = function(code) {
  * @return {string} Legal line of code.
  */
 Blockly.Velocity.scrubNakedValue = function(line) {
-  return line + ';\n';
+  return line + '\n';
 };
 
 /**
@@ -160,7 +151,7 @@ Blockly.Velocity.scrub_ = function(block, code) {
     // Collect comment for this block.
     var comment = block.getCommentText();
     if (comment) {
-      commentCode += Blockly.Velocity.prefixLines(comment, '// ') + '\n';
+      commentCode += Blockly.Velocity.prefixLines(comment, '## ') + '\n';
     }
     // Collect comments for all value arguments.
     // Don't collect comments for nested statements.
@@ -170,7 +161,7 @@ Blockly.Velocity.scrub_ = function(block, code) {
         if (childBlock) {
           var comment = Blockly.Velocity.allNestedComments(childBlock);
           if (comment) {
-            commentCode += Blockly.Velocity.prefixLines(comment, '// ');
+            commentCode += Blockly.Velocity.prefixLines(comment, '## ');
           }
         }
       }

@@ -81,3 +81,11 @@ Blockly.Velocity['controls_forEach'] = function(block) {
   code += '#foreach (' + indexVar + ' in ' + listVar + ') {\n' + branch + '}\n';
   return code;
 };
+
+Blockly.Velocity['controls_flow_statements'] = function(block) {
+  switch (block.getFieldValue('FLOW')) {
+    case 'BREAK':
+      return '#break';
+  }
+  throw 'Unknown flow statement.';
+};
