@@ -144,28 +144,11 @@ Blockly.Velocity['lists_getIndex'] = function(block) {
       return list + '.remove(' + list + '.indexOf('+list+'[-1]))\n';
     }
   } else if (where == 'RANDOM') {
-    var functionName = Blockly.Velocity.provideFunction_(
-        'lists_get_random_item',
-        [ 'function ' + Blockly.Velocity.FUNCTION_NAME_PLACEHOLDER_ +
-            '(list, remove) {',
-          '  var x = Math.floor(Math.random() * list.length);',
-          '  if (remove) {',
-          '    return list.splice(x, 1)[0];',
-          '  } else {',
-          '    return list[x];',
-          '  }',
-          '}']);
-    code = functionName + '(' + list + ', ' + (mode != 'GET') + ')';
-    if (mode == 'GET' || mode == 'GET_REMOVE') {
-      return [code, Blockly.Velocity.ORDER_FUNCTION_CALL];
-    } else if (mode == 'REMOVE') {
-      return code + ';\n';
-    }
     if (mode == 'GET') {
-        var code = '#set($s = $mathtool.getRandom()*$'+list+'.size())\n$' + list+ '[$mathtool.floor($s)]';
+        var code = list+ '[$mathtool.random(0,' + list + '.size())]';
         return [code, Blockly.Python.ORDER_FUNCTION_CALL];
       } else {
-        var code = '#set($s = $mathtool.getRandom()*$'+list+'.size())\n$' + list+ '.remove($mathtool.floor($s))';
+        var code = list+ '.remove($mathtool.random(0,' + list + '.size()))';
         if (mode == 'GET_REMOVE') {
           return [code, Blockly.Python.ORDER_FUNCTION_CALL];
         } else if (mode == 'REMOVE') {
@@ -234,7 +217,7 @@ Blockly.Velocity['lists_setIndex'] = function(block) {
     var code = cacheList();
     var xVar = Blockly.Velocity.variableDB_.getDistinctName(
         'tmp_x', Blockly.Variables.NAME_TYPE);
-    code += '#set(' + xVar + ' = $mathtool.floor($mathtool.getRandom()*$'+list+'.size()))';
+    code += '#set(' + xVar + ' = $mathtool.random(0,' + list + '.size())';
     if (mode == 'SET') {
       code += '#set('+ list + '[' + xVar + '] = ' + value + ')';
       return code;
