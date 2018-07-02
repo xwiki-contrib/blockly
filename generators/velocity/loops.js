@@ -78,7 +78,7 @@ Blockly.Velocity['controls_forEach'] = function(block) {
       variable0 + '_index', Blockly.Variables.NAME_TYPE);
   branch = Blockly.Velocity.INDENT + "#set(" + variable0 + ' = ' +
       listVar + '[' + indexVar + '])\n' + branch;
-  code += '#foreach (' + indexVar + ' in ' + listVar + ') {\n' + branch + '}\n';
+  code += '#foreach (' + indexVar + ' in ' + listVar + ')\n' + branch + '#end\n';
   return code;
 };
 
