@@ -37,12 +37,7 @@ Blockly.Velocity['colour_picker'] = function(block) {
 
 Blockly.Velocity['colour_random'] = function(block) {
   // Generate a random colour.
-  var functionName = Blockly.Velocity.provideFunction_(
-      'colour_random',
-      [ 'function ' + Blockly.Velocity.FUNCTION_NAME_PLACEHOLDER_ + '() {',
-        '  return \'#\' . str_pad(dechex(mt_rand(0, 0xFFFFFF)), 6, \'0\', STR_PAD_LEFT);',
-        '}']);
-  var code = functionName + '()';
+  var code = "#set ($s = '#%06X')#set ($lim = $mathtool.pow(2,24) - 1)$s.format($s, $lim)"
   return [code, Blockly.Velocity.ORDER_FUNCTION_CALL];
 };
 
@@ -54,17 +49,10 @@ Blockly.Velocity['colour_rgb'] = function(block) {
       Blockly.Velocity.ORDER_COMMA) || 0;
   var blue = Blockly.Velocity.valueToCode(block, 'BLUE',
       Blockly.Velocity.ORDER_COMMA) || 0;
-  var functionName = Blockly.Velocity.provideFunction_(
-      'colour_rgb',
-      [ 'function ' + Blockly.Velocity.FUNCTION_NAME_PLACEHOLDER_ +
-          '($r, $g, $b) {',
-        '  $hex = "#";',
-        '  $hex .= str_pad(dechex($r), 2, "0", STR_PAD_LEFT);',
-        '  $hex .= str_pad(dechex($g), 2, "0", STR_PAD_LEFT);',
-        '  $hex .= str_pad(dechex($b), 2, "0", STR_PAD_LEFT);',
-        '  return $hex;',
-        '}']);
-  var code = functionName + '($' + red + ', $' + green + ', $' + blue + ')';
+  var r = "$mathtool.round($mathtool.min(100, $mathtool.max(0," + red + ")) * 2.55)"
+  var g = "$mathtool.round($mathtool.min(100, $mathtool.max(0," + green + ")) * 2.55)"
+  var b = "$mathtool.round($mathtool.min(100, $mathtool.max(0," + blue + ")) * 2.55)"
+  var code = "#set ($s = '#%02x%02x%02x')$s.format($s," + r + ", " + g + ", " + b + ")"
   return [code, Blockly.Velocity.ORDER_FUNCTION_CALL];
 };
 
@@ -76,26 +64,23 @@ Blockly.Velocity['colour_blend'] = function(block) {
       Blockly.Velocity.ORDER_COMMA) || '\'#000000\'';
   var ratio = Blockly.Velocity.valueToCode(block, 'RATIO',
       Blockly.Velocity.ORDER_COMMA) || 0.5;
-  var functionName = Blockly.Velocity.provideFunction_(
-      'colour_blend',
-      [ 'function ' + Blockly.Velocity.FUNCTION_NAME_PLACEHOLDER_ +
-          '($c1, $c2, $ratio) {',
-        '  $ratio = max(min($ratio, 1), 0);',
-        '  $r1 = hexdec(substr($c1,0,2));',
-        '  $g1 = hexdec(substr($c1,2,2));',
-        '  $b1 = hexdec(substr($c1,4,2));',
-        '  $r2 = hexdec(substr($c2,0,2));',
-        '  $g2 = hexdec(substr($c2,2,2));',
-        '  $b2 = hexdec(substr($c2,4,2));',
-        '  $r = round($r1 * (1 - $ratio) + $r2 * $ratio);',
-        '  $g = round($g1 * (1 - $ratio) + $g2 * $ratio);',
-        '  $b = round($b1 * (1 - $ratio) + $b2 * $ratio);',
-        '  $hex = "#";',
-        '  $hex .= str_pad(dechex($r), 2, "0", STR_PAD_LEFT);',
-        '  $hex .= str_pad(dechex($g), 2, "0", STR_PAD_LEFT);',
-        '  $hex .= str_pad(dechex($b), 2, "0", STR_PAD_LEFT);',
-        '  return $hex;',
-        '}']);
-  var code = functionName + '($' + c1 + ', $' + c2 + ', $' + ratio + ')';
+  var code = "#set($Integer = 0)";
+  
+  var r1 = "#set($r1 = \'" + c1 + "\'.substring(1,3))$Integer.parseInt($r1,16)";
+  var r2 = "#set($r2 = \'" + c2 + "\'.substring(1,3))$Integer.parseInt($r2,16)";
+
+  var g1 = "#set($g1 = \'" + c1 + "\'.substring(3,5))$Integer.parseInt($g1,16)";
+  var g2 = "#set($g2 = \'" + c2 + "\'.substring(3,5))$Integer.parseInt($g2,16)";
+
+  var b1 = "#set($b1 = \'" + c1 + "\'.substring(5,7))$Integer.parseInt($b1,16)";
+  var b2 = "#set($b2 = \'" + c2 + "\'.substring(5,7))$Integer.parseInt($b2,16)";  
+
+  var ratio = "#set($ratio = $mathtool.min(1, $mathtool.max(0," + ratio + ")))";
+  
+  var r = '#set($temp = $r1 * (1 - $ratio) + $r2 * $ratio)#set($r = $mathtool.round($temp)';
+  var g = '#set($temp = $g1 * (1 - $ratio) + $g2 * $ratio)#set($g = $mathtool.round($temp)';
+  var b = '#set($temp = $b1 * (1 - $ratio) + $b2 * $ratio)#set($b = $mathtool.round($temp)',
+
+  code = code + r1 + r2 + g1 + g2 + b1 + b2 + r + g + b + "#set ($s = '#%02x%02x%02x')$s.format($s,$r,$g,$b)";
   return [code, Blockly.Velocity.ORDER_FUNCTION_CALL];
 };
