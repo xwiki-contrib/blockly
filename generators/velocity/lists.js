@@ -41,27 +41,17 @@ Blockly.Velocity['lists_create_with'] = function(block) {
     code[n] = Blockly.Velocity.valueToCode(block, 'ADD' + n,
         Blockly.Velocity.ORDER_COMMA) || 'null';
   }
-  code = 'array(' + code.join(', ') + ')';
+  code = '[' + code.join(', ') + ']';
   return [code, Blockly.Velocity.ORDER_ATOMIC];
 };
 
 Blockly.Velocity['lists_repeat'] = function(block) {
   // Create a list with one element repeated.
-  var functionName = Blockly.Velocity.provideFunction_(
-      'lists_repeat',
-      [ '#macro ( ' + Blockly.Velocity.FUNCTION_NAME_PLACEHOLDER_ +
-          '$value $n )',
-        '  #set($array = [])',
-        '  #foreach ($number in [1..$number])',
-        '    #set($temp = $array.add($element))',
-        '  #end',
-        '  $array',
-        '#end']);
   var argument0 = Blockly.Velocity.valueToCode(block, 'ITEM',
       Blockly.Velocity.ORDER_COMMA) || 'null';
   var argument1 = Blockly.Velocity.valueToCode(block, 'NUM',
       Blockly.Velocity.ORDER_COMMA) || '0';
-  var code = functionName + '($' + argument0 + ', $' + argument1 + ')';
+  var code = "#set($array = [])#foreach ($number in [1.." + argument1 + "]#set($temp = $array.add(" + argument0 + "))#end$array"
   return [code, Blockly.Velocity.ORDER_MULTIPLICATIVE];
 };
 
@@ -138,10 +128,10 @@ Blockly.Velocity['lists_getIndex'] = function(block) {
       var code = list + '[-' + at + ']';
       return [code, Blockly.Velocity.ORDER_FUNCTION_CALL];
     } else if (mode == 'GET_REMOVE') {
-      var code = list + '.remove(' + list + '.indexOf('+list+'[-1]))';
+      var code = list + '.remove(' + list + '.indexOf('+list+'[-' + at + ']))';
       return [code, Blockly.Velocity.ORDER_MEMBER];
     } else if (mode == 'REMOVE') {
-      return list + '.remove(' + list + '.indexOf('+list+'[-1]))\n';
+      return list + '.remove(' + list + '.indexOf('+list+'[-' + at + ']))\n';
     }
   } else if (where == 'RANDOM') {
     if (mode == 'GET') {
@@ -333,6 +323,7 @@ Blockly.Velocity['lists_sort'] = function(block) {
   var list = Blockly.Velocity.valueToCode(block, 'LIST',
       Blockly.Velocity.ORDER_FUNCTION_CALL) || '[]';
   var direction = block.getFieldValue('DIRECTION') === '1' ? 1 : -1;
+  //Incorporate descending order sorting also
   return ["$sorttool.sort("list + ')',
       Blockly.Velocity.ORDER_FUNCTION_CALL];
 };

@@ -65,7 +65,8 @@ Blockly.Velocity.ORDER_EQUALITY = 7;      // == !=
 Blockly.Velocity.ORDER_BITWISE_OR = 10;     // |
 Blockly.Velocity.ORDER_LOGICAL_AND = 11;   // &&
 Blockly.Velocity.ORDER_LOGICAL_OR = 12;    // ||
-Blockly.Velocity.ORDER_ASSIGNMENT = 14;    // =
+Blockly.Velocity.ORDER_ASSIGNMENT = 14;
+Blockly.JavaScript.ORDER_COMMA = 18;     // =
 Blockly.Velocity.ORDER_NONE = 99;          // (...)
 
 /**
