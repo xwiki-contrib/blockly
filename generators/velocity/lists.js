@@ -39,7 +39,7 @@ Blockly.Velocity['lists_create_with'] = function(block) {
   var code = new Array(block.itemCount_);
   for (var n = 0; n < block.itemCount_; n++) {
     code[n] = Blockly.Velocity.valueToCode(block, 'ADD' + n,
-        Blockly.Velocity.ORDER_COMMA) || 'null';
+        Blockly.Velocity.ORDER_COMMA) || '$NULL';
   }
   code = '[' + code.join(', ') + ']';
   return [code, Blockly.Velocity.ORDER_ATOMIC];
@@ -48,7 +48,7 @@ Blockly.Velocity['lists_create_with'] = function(block) {
 Blockly.Velocity['lists_repeat'] = function(block) {
   // Create a list with one element repeated.
   var argument0 = Blockly.Velocity.valueToCode(block, 'ITEM',
-      Blockly.Velocity.ORDER_COMMA) || 'null';
+      Blockly.Velocity.ORDER_COMMA) || '$NULL';
   var argument1 = Blockly.Velocity.valueToCode(block, 'NUM',
       Blockly.Velocity.ORDER_COMMA) || '0';
   var code = "#set($array = [])#foreach ($number in [1.." + argument1 + "]#set($temp = $array.add(" + argument0 + "))#end$array"
@@ -160,7 +160,7 @@ Blockly.Velocity['lists_setIndex'] = function(block) {
   var at = Blockly.Velocity.valueToCode(block, 'AT',
       Blockly.Velocity.ORDER_NONE) || '1';
   var value = Blockly.Velocity.valueToCode(block, 'TO',
-      Blockly.Velocity.ORDER_ASSIGNMENT) || 'null';
+      Blockly.Velocity.ORDER_ASSIGNMENT) || '$$NULL';
   // Cache non-trivial values to variables to prevent repeated look-ups.
   // Closure, which accesses and modifies 'list'.
   function cacheList() {
@@ -244,8 +244,9 @@ Blockly.Velocity['lists_getSublist'] = function(block) {
       Blockly.Velocity.ORDER_MEMBER) || '[]';
   var where1 = block.getFieldValue('WHERE1');
   var where2 = block.getFieldValue('WHERE2');
+  var code = "";
   if (where1 == 'FIRST' && where2 == 'LAST') {
-    var code = list;
+    code = list;
   } 
   else {
     // If the list is a variable or doesn't require a call for length, don't

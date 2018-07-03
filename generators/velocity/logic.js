@@ -113,5 +113,5 @@ Blockly.Velocity['logic_boolean'] = function(block) {
 
 Blockly.Velocity['logic_null'] = function(block) {
   // Null data type.
-  return ['null', Blockly.Velocity.ORDER_ATOMIC];
+  return ['$NULL', Blockly.Velocity.ORDER_ATOMIC];
 };
