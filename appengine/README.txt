@@ -32,7 +32,8 @@ blockly/
      |- javascript_compressed.js
      |- lua_compressed.js
      |- php_compressed.js
-     `- python_compressed.js
+     |- python_compressed.js
+     `- velocity_compressed.js
 
 Instructions for fetching the optional Closure library may be found here:
   https://developers.google.com/blockly/guides/modify/web/closure
