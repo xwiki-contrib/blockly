@@ -66,8 +66,40 @@ Blockly.Velocity.ORDER_BITWISE_OR = 10;     // |
 Blockly.Velocity.ORDER_LOGICAL_AND = 11;   // &&
 Blockly.Velocity.ORDER_LOGICAL_OR = 12;    // ||
 Blockly.Velocity.ORDER_ASSIGNMENT = 14;
-Blockly.JavaScript.ORDER_COMMA = 18;     // =
+Blockly.Velocity.ORDER_COMMA = 18;     // =
 Blockly.Velocity.ORDER_NONE = 99;          // (...)
+
+
+/**
+ * List of outer-inner pairings that do NOT require parentheses.
+ * @type {!Array.<!Array.<number>>}
+ */
+Blockly.Velocity.ORDER_OVERRIDES = [
+  // (foo()).bar -> foo().bar
+  // (foo())[0] -> foo()[0]
+  [Blockly.Velocity.ORDER_FUNCTION_CALL, Blockly.Velocity.ORDER_MEMBER],
+  // (foo())() -> foo()()
+  [Blockly.Velocity.ORDER_FUNCTION_CALL, Blockly.Velocity.ORDER_FUNCTION_CALL],
+  // (foo.bar).baz -> foo.bar.baz
+  // (foo.bar)[0] -> foo.bar[0]
+  // (foo[0]).bar -> foo[0].bar
+  // (foo[0])[1] -> foo[0][1]
+  [Blockly.Velocity.ORDER_MEMBER, Blockly.Velocity.ORDER_MEMBER],
+  // (foo.bar)() -> foo.bar()
+  // (foo[0])() -> foo[0]()
+  [Blockly.Velocity.ORDER_MEMBER, Blockly.Velocity.ORDER_FUNCTION_CALL],
+
+  // !(!foo) -> !!foo
+  [Blockly.Velocity.ORDER_LOGICAL_NOT, Blockly.Velocity.ORDER_LOGICAL_NOT],
+  // a * (b * c) -> a * b * c
+  [Blockly.Velocity.ORDER_MULTIPLICATION, Blockly.Velocity.ORDER_MULTIPLICATION],
+  // a + (b + c) -> a + b + c
+  [Blockly.Velocity.ORDER_ADDITION, Blockly.Velocity.ORDER_ADDITION],
+  // a && (b && c) -> a && b && c
+  [Blockly.Velocity.ORDER_LOGICAL_AND, Blockly.Velocity.ORDER_LOGICAL_AND],
+  // a || (b || c) -> a || b || c
+  [Blockly.Velocity.ORDER_LOGICAL_OR, Blockly.Velocity.ORDER_LOGICAL_OR]
+];
 
 /**
  * Initialise the database of variable names.
@@ -79,7 +111,7 @@ Blockly.Velocity.init = function(workspace) {
   // Create a dictionary mapping desired function names in definitions_
   // to actual function names (to avoid collisions with user functions).
   Blockly.Velocity.functionNames_ = Object.create(null);
-
+  
   if (!Blockly.Velocity.variableDB_) {
     Blockly.Velocity.variableDB_ =
         new Blockly.Names(Blockly.Velocity.RESERVED_WORDS_);
@@ -87,14 +119,28 @@ Blockly.Velocity.init = function(workspace) {
     Blockly.Velocity.variableDB_.reset();
   }
 
+  Blockly.Velocity.variableDB_.setVariableMap(workspace.getVariableMap());
+
   var defvars = [];
-  var variables = Blockly.Variables.allVariables(workspace);
-  for (var x = 0; x < variables.length; x++) {
-    defvars[x] = '#set( ' +
-        Blockly.Velocity.variableDB_.getName(variables[x],
-        Blockly.Variables.NAME_TYPE) + ')';
+  // Add developer variables (not created or named by the user).
+  var devVarList = Blockly.Variables.allDeveloperVariables(workspace);
+  for (var i = 0; i < devVarList.length; i++) {
+    defvars.push(Blockly.Velocity.variableDB_.getName(devVarList[i],
+        Blockly.Names.DEVELOPER_VARIABLE_TYPE));
   }
-  Blockly.Velocity.definitions_['variables'] = defvars.join('\n');
+
+  // Add user variables, but only ones that are being used.
+  var variables = Blockly.Variables.allUsedVarModels(workspace);
+  for (var i = 0; i < variables.length; i++) {
+    defvars.push(Blockly.Velocity.variableDB_.getName(variables[i].getId(),
+        Blockly.Variables.NAME_TYPE));
+  }
+
+  // Declare all of the variables.
+  if (defvars.length) {
+    Blockly.Velocity.definitions_['variables'] =
+        '#set( ' + defvars.join(', ') + ')\\';
+  }
 };
 
 /**
@@ -108,6 +154,10 @@ Blockly.Velocity.finish = function(code) {
   for (var name in Blockly.Velocity.definitions_) {
     definitions.push(Blockly.Velocity.definitions_[name]);
   }
+  // Clean up temporary data.
+  delete Blockly.Velocity.definitions_;
+  delete Blockly.Velocity.functionNames_;
+  Blockly.Velocity.variableDB_.reset();
   return definitions.join('\n\n') + '\n\n\n' + code;
 };
 
@@ -118,7 +168,7 @@ Blockly.Velocity.finish = function(code) {
  * @return {string} Legal line of code.
  */
 Blockly.Velocity.scrubNakedValue = function(line) {
-  return line + '\n';
+  return line + '\\';
 };
 
 /**
@@ -151,8 +201,16 @@ Blockly.Velocity.scrub_ = function(block, code) {
   if (!block.outputConnection || !block.outputConnection.targetConnection) {
     // Collect comment for this block.
     var comment = block.getCommentText();
+    comment = Blockly.utils.wrap(comment, Blockly.Velocity.COMMENT_WRAP - 3);
     if (comment) {
-      commentCode += Blockly.Velocity.prefixLines(comment, '## ') + '\n';
+      if (block.getProcedureDef) {
+        // Use a comment block for function comments.
+        commentCode += '#**\\' +
+                       Blockly.Velocity.prefixLines(comment + '\\', '') +
+                       ' *#\\';
+      } else {
+        commentCode += Blockly.Velocity.prefixLines(comment + '\\', '## ');
+      }
     }
     // Collect comments for all value arguments.
     // Don't collect comments for nested statements.

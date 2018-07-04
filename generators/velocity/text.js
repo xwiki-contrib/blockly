@@ -76,7 +76,7 @@ Blockly.Velocity['text_append'] = function(block) {
       Blockly.Variables.NAME_TYPE);
   var value = Blockly.Velocity.valueToCode(block, 'TEXT',
       Blockly.Velocity.ORDER_NONE) || '\'\'';
-  return "#set (" varName + ' = \"' + varName + '\" + \"' + value + '\")';
+  return "#set (" + varName + ' = \"' + varName + '\" + \"' + value + '\")';
 };
 
 Blockly.Velocity['text_length'] = function(block) {

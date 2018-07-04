@@ -50,7 +50,7 @@ Blockly.Velocity['controls_repeat_ext'] = function(block) {
         'repeat_end', Blockly.Variables.NAME_TYPE);
     code += '#set( ' + endVar + ' = ' + repeats + ')\n';
   }
-  code += '#foreach (' + loopVar + 'in [' + startVar + ".." + endVar + "])"
+  code += '#foreach (' + loopVar + 'in [0..' + endVar + "])" +
       branch + '#end\n';
   return code;
 };

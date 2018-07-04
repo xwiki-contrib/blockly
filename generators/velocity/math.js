@@ -70,13 +70,13 @@ Blockly.Velocity['math_single'] = function(block) {
     // Negation is a special case given its different operator precedence.
     arg = Blockly.Velocity.valueToCode(block, 'NUM',
         Blockly.Velocity.ORDER_UNARY_NEGATION) || '0';
-    if (arg[0] == '-')
+    if (arg[0] == '-'){
       arg[0] = "+";
       code = arg;
-    else if (arg[0] == '+')
+    } else if (arg[0] == '+') {
       arg[0] = "-";
       code = arg;
-    else
+    } else
       code = '-' + arg;
     return [code, Blockly.Velocity.ORDER_UNARY_NEGATION];
   }
@@ -211,7 +211,7 @@ Blockly.Velocity['math_random_int'] = function(block) {
       Blockly.Velocity.ORDER_COMMA) || '0';
   var argument1 = Blockly.Velocity.valueToCode(block, 'TO',
       Blockly.Velocity.ORDER_COMMA) || '0';
-  var code = '$mathtool.random(' + argument0 + ', ' + argument1 ')';
+  var code = '$mathtool.random(' + argument0 + ', ' + argument1 + ')';
   return [code, Blockly.Velocity.ORDER_FUNCTION_CALL];
 };
 

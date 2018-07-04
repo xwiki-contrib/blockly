@@ -314,7 +314,7 @@ Code.renderContent = function() {
   } else if (content.id == 'content_lua') {
     Code.attemptCodeGeneration(Blockly.Lua, 'lua');
   } else if (content.id == 'content_velocity') {
-    Code.attemptCodeGeneration(Blockly.velocity, 'velocity');
+    Code.attemptCodeGeneration(Blockly.Velocity, 'velocity');
   }
 };
 

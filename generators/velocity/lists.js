@@ -145,7 +145,6 @@ Blockly.Velocity['lists_getIndex'] = function(block) {
           return code + '\n';
         }
       }
-      break;
   }
   throw 'Unhandled combination (lists_getIndex).';
 };
@@ -325,6 +324,6 @@ Blockly.Velocity['lists_sort'] = function(block) {
       Blockly.Velocity.ORDER_FUNCTION_CALL) || '[]';
   var direction = block.getFieldValue('DIRECTION') === '1' ? 1 : -1;
   //Incorporate descending order sorting also
-  return ["$sorttool.sort("list + ')',
+  return ["$sorttool.sort(" + list + ')',
       Blockly.Velocity.ORDER_FUNCTION_CALL];
 };
