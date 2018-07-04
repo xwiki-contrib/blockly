@@ -60,6 +60,17 @@
 <script src="../../generators/dart/variables.js"></script>
 <script src="../../generators/dart/procedures.js"></script>
 
+<script src="../../generators/velocity.js"></script>
+<script src="unittest_velocity.js"></script>
+<script src="../../generators/velocity/logic.js"></script>
+<script src="../../generators/velocity/loops.js"></script>
+<script src="../../generators/velocity/math.js"></script>
+<script src="../../generators/velocity/text.js"></script>
+<script src="../../generators/velocity/lists.js"></script>
+<script src="../../generators/velocity/colour.js"></script>
+<script src="../../generators/velocity/variables.js"></script>
+<script src="../../generators/velocity/procedures.js"></script>
+
 <script src="unittest.js"></script>
 <script src="../../msg/messages.js"></script>
 <script src="../../blocks/logic.js"></script>
@@ -186,6 +197,11 @@ function toLua() {
 
 function toDart() {
   var code = Blockly.Dart.workspaceToCode(demoWorkspace);
+  setOutput(code);
+}
+
+function toVelocity() {
+  var code = Blockly.Velocity.workspaceToCode(demoWorkspace);
   setOutput(code);
 }
 
