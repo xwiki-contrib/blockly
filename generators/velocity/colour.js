@@ -52,7 +52,7 @@ Blockly.Velocity['colour_rgb'] = function(block) {
   var r = "$mathtool.round($mathtool.min(100, $mathtool.max(0," + red + ")) * 2.55)"
   var g = "$mathtool.round($mathtool.min(100, $mathtool.max(0," + green + ")) * 2.55)"
   var b = "$mathtool.round($mathtool.min(100, $mathtool.max(0," + blue + ")) * 2.55)"
-  var code = "#set ($s = '#%02x%02x%02x')$s.format($s," + r + ", " + g + ", " + b + ")"
+  var code = "#set ($s = '#%02x%02x%02x')$s.format($s," + r + ", " + g + ", " + b + ")$s"
   return [code, Blockly.Velocity.ORDER_FUNCTION_CALL];
 };
 
@@ -81,6 +81,6 @@ Blockly.Velocity['colour_blend'] = function(block) {
   var g = '#set($temp = $g1 * (1 - $ratio) + $g2 * $ratio)#set($g = $mathtool.round($temp)';
   var b = '#set($temp = $b1 * (1 - $ratio) + $b2 * $ratio)#set($b = $mathtool.round($temp)',
 
-  code = code + r1 + r2 + g1 + g2 + b1 + b2 + r + g + b + "#set ($s = '#%02x%02x%02x')$s.format($s,$r,$g,$b)";
+  code = code + r1 + r2 + g1 + g2 + b1 + b2 + r + g + b + "#set ($s = '#%02x%02x%02x')$s.format($s,$r,$g,$b)$s";
   return [code, Blockly.Velocity.ORDER_FUNCTION_CALL];
 };

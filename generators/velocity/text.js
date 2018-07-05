@@ -46,7 +46,7 @@ Blockly.Velocity['text_join'] = function(block) {
       var element = Blockly.Velocity.valueToCode(block, 'ADD0',
               Blockly.Velocity.ORDER_NONE) || '\'\'';
       // To type-convert to string. Verify once if this is true
-      var code = '\"' + element + '\"';
+      var code = element;
       return [code, Blockly.Velocity.ORDER_FUNCTION_CALL];
       break;
     case 2:
@@ -54,7 +54,7 @@ Blockly.Velocity['text_join'] = function(block) {
               Blockly.Velocity.ORDER_NONE) || '\'\'';
       var element1 = Blockly.Velocity.valueToCode(block, 'ADD1',
               Blockly.Velocity.ORDER_NONE) || '\'\'';
-      var code = '\"' + element0 + '\" + \"' + element1 + '\"';
+      var code = element0 + ' + ' + element1;
       return [code, Blockly.Velocity.ORDER_ADDITIVE];
       break;
     default:
@@ -65,7 +65,7 @@ Blockly.Velocity['text_join'] = function(block) {
       }
       var tempVar = Blockly.Velocity.variableDB_.getDistinctName('x',
           Blockly.Variables.NAME_TYPE);
-      var code = "$stringtool.join(\'\', [" + elements.join(', ') + '])'
+      var code = "[" + elements.join(' + ') + ']'
       return [code, Blockly.Velocity.ORDER_FUNCTION_CALL];
   }
 };
@@ -76,7 +76,7 @@ Blockly.Velocity['text_append'] = function(block) {
       Blockly.Variables.NAME_TYPE);
   var value = Blockly.Velocity.valueToCode(block, 'TEXT',
       Blockly.Velocity.ORDER_NONE) || '\'\'';
-  return "#set (" + varName + ' = \"' + varName + '\" + \"' + value + '\")';
+  return "#set (" + varName + ' = ' + varName + ' + ' + value + ')';
 };
 
 Blockly.Velocity['text_length'] = function(block) {
@@ -123,11 +123,11 @@ Blockly.Velocity['text_charAt'] = function(block) {
       var code = '#set ($index = $stringtool.length(' + text + ') - 1)' + text + '.charAt($index)';
       return [code, Blockly.Velocity.ORDER_MEMBER];
     case 'FROM_START':
-      var at = Blockly.Velocity.getAdjustedInt(block, 'AT');
+      var at = Blockly.Velocity.getAdjusted(block, 'AT');
       var code = text + '.charAt(' + at + ')';
       return [code, Blockly.Velocity.ORDER_MEMBER];
     case 'FROM_END':
-      var at = Blockly.Velocity.getAdjustedInt(block, 'AT', 1, true);
+      var at = Blockly.Velocity.getAdjusted(block, 'AT', 1, true);
       var code = '#set ($index = $stringtool.length(' + text + ') - ' + at + ')' + text + '.charAt($index)';
       return [code, Blockly.Velocity.ORDER_MEMBER];
     case 'RANDOM':
@@ -182,7 +182,7 @@ Blockly.Velocity['text_getSubstring'] = function(block) {
     }
     code += "#set($at1 = " + at1 +  ")"
     code += "#set($at2 = " + at2 +  ")"
-    code += list + '.substring($at1, $at2)';
+    code += text + '.substring($at1, $at2)';
   }
   return [code, Blockly.Velocity.ORDER_MEMBER];
 };
@@ -212,7 +212,7 @@ Blockly.Velocity['text_trim'] = function(block) {
   var OPERATORS = {
     'LEFT': ".replaceAll('^[\s\xa0]+','')",
     'RIGHT': ".replaceAll('[\s\xa0]+$','')",
-    'BOTH': '.strip()'
+    'BOTH': '.trim()'
   };
   var operator = OPERATORS[block.getFieldValue('MODE')];
   var text = Blockly.Velocity.valueToCode(block, 'TEXT',

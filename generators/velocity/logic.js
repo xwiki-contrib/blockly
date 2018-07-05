@@ -38,7 +38,7 @@ Blockly.Velocity['controls_if'] = function(block) {
       Blockly.Velocity.ORDER_NONE) || 'false';
     branchCode = Blockly.Velocity.statementToCode(block, 'DO' + n);
     code += (n > 0 ? '#elseif' : '#if') +
-        '(' + conditionCode + ')\n' + branchCode+"\n";
+        ' (' + conditionCode + ')\n' + branchCode+"\n";
 
     ++n;
   } while (block.getInput('IF' + n));

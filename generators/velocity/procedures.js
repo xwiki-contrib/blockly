@@ -48,8 +48,8 @@ Blockly.Velocity['procedures_defnoreturn'] = function(block) {
     args[i] = Blockly.Velocity.variableDB_.getName(block.arguments_[i],
         Blockly.Variables.NAME_TYPE);
   }
-  var code = '#macro( ' + funcName + args.join(' ') + ' )' +
-      branch + '#end';
+  var code = '#macro( ' + funcName + args.join(' ') + ' )\n' +
+      branch + '#end\n';
   code = Blockly.Velocity.scrub_(block, code);
   // Add % so as not to collide with helper functions in definitions list.
   Blockly.Velocity.definitions_['%' + funcName] = code;

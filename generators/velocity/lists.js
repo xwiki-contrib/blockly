@@ -159,7 +159,7 @@ Blockly.Velocity['lists_setIndex'] = function(block) {
   var at = Blockly.Velocity.valueToCode(block, 'AT',
       Blockly.Velocity.ORDER_NONE) || '1';
   var value = Blockly.Velocity.valueToCode(block, 'TO',
-      Blockly.Velocity.ORDER_ASSIGNMENT) || '$$NULL';
+      Blockly.Velocity.ORDER_ASSIGNMENT) || '$NULL';
   // Cache non-trivial values to variables to prevent repeated look-ups.
   // Closure, which accesses and modifies 'list'.
   function cacheList() {
@@ -280,9 +280,7 @@ Blockly.Velocity['lists_getSublist'] = function(block) {
       default:
         throw 'Unhandled option (lists_getSublist).';
     }
-    code += "#set($at1 = " + at1 +  ")"
-    code += "#set($at2 = " + at2 +  ")"
-    code += list + '.subList($at1, $at2)';
+    code += list + '.subList(' + at1 + ', ' + at2 + ')';
   }
   return [code, Blockly.Velocity.ORDER_FUNCTION_CALL];
 };

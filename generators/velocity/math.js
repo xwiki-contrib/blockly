@@ -148,8 +148,8 @@ Blockly.Velocity['math_change'] = function(block) {
       Blockly.Velocity.ORDER_ADDITION) || '0';
   var varName = Blockly.Velocity.variableDB_.getName(
       block.getFieldValue('VAR'), Blockly.Variables.NAME_TYPE);
-  var code = "#if ("+varName+'.class.simpleName == \'Double\' ||'+varName+'.class.simpleName == \'Integer\')' +
-              varName + argument0 + "#else" + argument0 + "#end"
+  var code = "#set ("+varName+ "= \"#if ("+varName+'.class.simpleName == \'Double\' ||'+varName+'.class.simpleName == \'Integer\')' +
+              varName + argument0 + "#else" + argument0 + "#end\")"
   return code;
 };
 

@@ -114,7 +114,7 @@ Blockly.Velocity.init = function(workspace) {
   
   if (!Blockly.Velocity.variableDB_) {
     Blockly.Velocity.variableDB_ =
-        new Blockly.Names(Blockly.Velocity.RESERVED_WORDS_);
+        new Blockly.Names(Blockly.Velocity.RESERVED_WORDS_, '$');
   } else {
     Blockly.Velocity.variableDB_.reset();
   }
@@ -126,20 +126,23 @@ Blockly.Velocity.init = function(workspace) {
   var devVarList = Blockly.Variables.allDeveloperVariables(workspace);
   for (var i = 0; i < devVarList.length; i++) {
     defvars.push(Blockly.Velocity.variableDB_.getName(devVarList[i],
-        Blockly.Names.DEVELOPER_VARIABLE_TYPE));
+        Blockly.Names.DEVELOPER_VARIABLE_TYPE) + ' = $NULL');
   }
 
   // Add user variables, but only ones that are being used.
   var variables = Blockly.Variables.allUsedVarModels(workspace);
   for (var i = 0; i < variables.length; i++) {
     defvars.push(Blockly.Velocity.variableDB_.getName(variables[i].getId(),
-        Blockly.Variables.NAME_TYPE));
+        Blockly.Variables.NAME_TYPE) + ' = $NULL');
   }
 
   // Declare all of the variables.
   if (defvars.length) {
-    Blockly.Velocity.definitions_['variables'] =
-        '#set( ' + defvars.join(', ') + ')\\';
+    var code = "";
+    for (var i=0; i<defvars.length; i++) {
+        code += '#set( ' + defvars[i] + ' )';
+    }
+    Blockly.Velocity.definitions_['variables'] = code;
   }
 };
 
@@ -168,7 +171,7 @@ Blockly.Velocity.finish = function(code) {
  * @return {string} Legal line of code.
  */
 Blockly.Velocity.scrubNakedValue = function(line) {
-  return line + '\\';
+  return line + '\n';
 };
 
 /**
@@ -205,11 +208,11 @@ Blockly.Velocity.scrub_ = function(block, code) {
     if (comment) {
       if (block.getProcedureDef) {
         // Use a comment block for function comments.
-        commentCode += '#**\\' +
-                       Blockly.Velocity.prefixLines(comment + '\\', '') +
-                       ' *#\\';
+        commentCode += '#**\n' +
+                       Blockly.Velocity.prefixLines(comment + '\n', '') +
+                       ' *#\n';
       } else {
-        commentCode += Blockly.Velocity.prefixLines(comment + '\\', '## ');
+        commentCode += Blockly.Velocity.prefixLines(comment + '\n', '## ');
       }
     }
     // Collect comments for all value arguments.
