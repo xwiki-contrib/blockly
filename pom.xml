@@ -28,7 +28,7 @@
         <version>9.11-5</version>
     </parent>
     <groupId>org.xwiki.contrib</groupId>
-    <artifactId>blockly-webjar</artifactId>
+    <artifactId>blockly</artifactId>
     <version>0.1</version>
     <name>Blockly</name>
     <description>WebJar for Blockly</description>
