@@ -51,7 +51,7 @@ Blockly.Velocity['controls_repeat_ext'] = function(block) {
     code += '#set( ' + endVar + ' = ' + repeats + ')\n';
   }
   code += '#foreach (' + loopVar + ' in [0..' + endVar + "])\n" +
-      branch + '#end\n';
+      branch + '\n#end\n';
   return code;
 };
 
@@ -59,26 +59,15 @@ Blockly.Velocity['controls_repeat'] =
     Blockly.Velocity['controls_repeat_ext'];
 
 Blockly.Velocity['controls_forEach'] = function(block) {
-  // For each loop.
+    // For each loop.
   var variable0 = Blockly.Velocity.variableDB_.getName(
       block.getFieldValue('VAR'), Blockly.Variables.NAME_TYPE);
   var argument0 = Blockly.Velocity.valueToCode(block, 'LIST',
-      Blockly.Velocity.ORDER_ASSIGNMENT) || '[]';
+      Blockly.Velocity.ORDER_RELATIONAL) || '[]';
   var branch = Blockly.Velocity.statementToCode(block, 'DO');
-  branch = Blockly.Velocity.addLoopTrap(branch, block.id);
-  var code = '';
-  // Cache non-trivial values to variables to prevent repeated look-ups.
-  var listVar = argument0;
-  if (!argument0.match(/^\w+$/)) {
-    listVar = Blockly.Velocity.variableDB_.getDistinctName(
-        variable0 + '_list', Blockly.Variables.NAME_TYPE);
-    code += '#set( ' + listVar + ' = ' + argument0 + ')\n';
-  }
-  var indexVar = Blockly.Velocity.variableDB_.getDistinctName(
-      variable0 + '_index', Blockly.Variables.NAME_TYPE);
-  branch = Blockly.Velocity.INDENT + "#set(" + variable0 + ' = ' +
-      listVar + '[' + indexVar + '])\n' + branch;
-  code += '#foreach (' + indexVar + ' in ' + listVar + ')\n' + branch + '#end\n';
+  branch = Blockly.Velocity.addLoopTrap(branch, block.id) ||
+      Blockly.Velocity.PASS;
+  var code = '#foreach (' + variable0 + ' in ' + argument0 + ')\n' + branch + '#end\n';
   return code;
 };
 

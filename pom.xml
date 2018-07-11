@@ -50,7 +50,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <upstream.version>0675910</upstream.version>
         <upstream.commit>067591082826c19539984ebb0630655e3262283d</upstream.commit>
-        <upstream.url>https://codeload.github.com/Remorax/blockly/zip/${upstream.commit}</upstream.url>
+        <upstream.url>https://codeload.github.com/xwiki-contrib/blockly/zip/${upstream.commit}</upstream.url>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${project.version}</destDir>
     </properties>
 
