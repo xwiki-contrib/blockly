@@ -29,7 +29,7 @@
     </parent>
     <groupId>org.xwiki.contrib</groupId>
     <artifactId>blockly</artifactId>
-    <version>0.1</version>
+    <version>0.2</version>
     <name>Blockly</name>
     <description>WebJar for Blockly</description>
     <developers>
@@ -48,8 +48,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <upstream.version>0675910</upstream.version>
-        <upstream.commit>067591082826c19539984ebb0630655e3262283d</upstream.commit>
+        <upstream.commit>cafca7ff43e4a719178abde9aefaa0c7fb840536</upstream.commit>
         <upstream.url>https://codeload.github.com/xwiki-contrib/blockly/zip/${upstream.commit}</upstream.url>
         <destDir>${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${project.version}</destDir>
     </properties>
