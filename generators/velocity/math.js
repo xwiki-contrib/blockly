@@ -57,7 +57,7 @@ Blockly.Velocity['math_arithmetic'] = function(block) {
     code = '$mathtool.pow(' + argument0 + ', ' + argument1 + ')';
     return [code, Blockly.Velocity.ORDER_FUNCTION_CALL];
   }
-  code = argument0 + operator + argument1;
+  code = "#set ($ans = " + argument0 + operator + argument1 + ")$ans";
   return [code, order];
 };
 
@@ -148,8 +148,7 @@ Blockly.Velocity['math_change'] = function(block) {
       Blockly.Velocity.ORDER_ADDITION) || '0';
   var varName = Blockly.Velocity.variableDB_.getName(
       block.getFieldValue('VAR'), Blockly.Variables.NAME_TYPE);
-  var code = "#set ("+varName+ "= \"#if ("+varName+'.class.simpleName == \'Double\' ||'+varName+'.class.simpleName == \'Integer\')' +
-              varName + argument0 + "#else" + argument0 + "#end\")"
+  var code = "#set (" + varName + " = " + varName + " + " + argument0 + ")"
   return code;
 };
 
@@ -188,7 +187,7 @@ Blockly.Velocity['math_modulo'] = function(block) {
       Blockly.Velocity.ORDER_MODULUS) || '0';
   var argument1 = Blockly.Velocity.valueToCode(block, 'DIVISOR',
       Blockly.Velocity.ORDER_MODULUS) || '0';
-  var code = argument0 + ' % ' + argument1;
+  var code = '#set($rem = ' + argument0 + ' % ' + argument1 + ')$rem';
   return [code, Blockly.Velocity.ORDER_MODULUS];
 };
 
@@ -210,12 +209,12 @@ Blockly.Velocity['math_random_int'] = function(block) {
   var argument0 = Blockly.Velocity.valueToCode(block, 'FROM',
       Blockly.Velocity.ORDER_COMMA) || '0';
   var argument1 = Blockly.Velocity.valueToCode(block, 'TO',
-      Blockly.Velocity.ORDER_COMMA) || '0';
+      Blockly.Velocity.ORDER_COMMA) || '10';
   var code = '$mathtool.random(' + argument0 + ', ' + argument1 + ')';
   return [code, Blockly.Velocity.ORDER_FUNCTION_CALL];
 };
 
 Blockly.Velocity['math_random_float'] = function(block) {
   // Random fraction between 0 and 1.
-  return ['$mathtool.random()', Blockly.Velocity.ORDER_FUNCTION_CALL];
+  return ['$mathtool.random(0.0,1.0)', Blockly.Velocity.ORDER_FUNCTION_CALL];
 };

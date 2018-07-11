@@ -51,7 +51,7 @@ Blockly.Velocity['lists_repeat'] = function(block) {
       Blockly.Velocity.ORDER_COMMA) || '$NULL';
   var argument1 = Blockly.Velocity.valueToCode(block, 'NUM',
       Blockly.Velocity.ORDER_COMMA) || '0';
-  var code = "#set($array = [])#foreach ($number in [1.." + argument1 + "]#set($temp = $array.add(" + argument0 + "))#end$array"
+  var code = "#set($array = [])#foreach ($number in [1.." + argument1 + "])#set($temp = $array.add(" + argument0 + "))#end$array"
   return [code, Blockly.Velocity.ORDER_MULTIPLICATIVE];
 };
 
@@ -59,7 +59,7 @@ Blockly.Velocity['lists_length'] = function(block) {
   // List length.
   var list = Blockly.Velocity.valueToCode(block, 'VALUE',
       Blockly.Velocity.ORDER_FUNCTION_CALL) || '[]';
-  return [list + '.size()', Blockly.Velocity.ORDER_FUNCTION_CALL];
+  return ["#set ($list = " + list + '.size())$list', Blockly.Velocity.ORDER_FUNCTION_CALL];
 };
 
 Blockly.Velocity['lists_isEmpty'] = function(block) {
@@ -79,7 +79,7 @@ Blockly.Velocity['lists_indexOf'] = function(block) {
       Blockly.Velocity.ORDER_MEMBER) || '[]';
   var code = list + '.' + operator + '(' + item + ')';
   if (block.workspace.options.oneBasedIndex) {
-    return [code + ' + 1', Blockly.Velocity.ORDER_ADDITION];
+    return ['#set($index = ' + code + ' + 1)$index', Blockly.Velocity.ORDER_ADDITION];
   }
   return [code, Blockly.Velocity.ORDER_FUNCTION_CALL];
 };
@@ -230,9 +230,9 @@ Blockly.Velocity.lists.getIndex_ = function(listName, where, opt_at) {
   if (where == 'FIRST') {
     return '0';
   } else if (where == 'FROM_END') {
-    return listName + '.size() - 1 - ' + opt_at;
+    return "#set ($index = " + listName + '.size() - 1 - ' + opt_at + ")$index";
   } else if (where == 'LAST') {
-    return listName + '.size() - 1';
+    return "#set ($index = " + listName + '.size() - 1)$index';
   } else {
     return opt_at;
   }

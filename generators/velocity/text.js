@@ -104,7 +104,7 @@ Blockly.Velocity['text_indexOf'] = function(block) {
       Blockly.Velocity.ORDER_MEMBER) || '\'\'';
   var code = text + '.' + operator + '(' + substring + ')';
   if (block.workspace.options.oneBasedIndex) {
-    return [code + ' + 1', Blockly.Velocity.ORDER_ADDITIVE];
+    return ["#set ($index = " + code + ' + 1)$index', Blockly.Velocity.ORDER_ADDITIVE];
   }
   return [code, Blockly.Velocity.ORDER_FUNCTION_CALL];
 };
