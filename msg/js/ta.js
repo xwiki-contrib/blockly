@@ -69,6 +69,8 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.DISABLE_BLOCK = "உறுப்பை இயங்காது செய்";
 /** @export */ Blockly.Msg.DUPLICATE_BLOCK = "மறுநகல்";
 /** @export */ Blockly.Msg.ENABLE_BLOCK = "உறுப்பை இயங்குமாரு செய்";
+/** @export */ Blockly.Msg.ENVVAR_CONSTANT_HELPURL = "https://www.xwiki.org/xwiki/bin/view/Documentation/DevGuide/Scripting/APIGuide/";  // untranslated
+/** @export */ Blockly.Msg.ENVVAR_CONSTANT_TOOLTIP = "Returns variables predefined in the XWiki context";  // untranslated
 /** @export */ Blockly.Msg.EXPAND_ALL = "உறுப்புகளை  காட்டு";
 /** @export */ Blockly.Msg.EXPAND_BLOCK = "உறுப்பை காட்டு";
 /** @export */ Blockly.Msg.EXTERNAL_INPUTS = "வெளி கருவிகளுடன் உள்ளீடு";
@@ -428,3 +430,4 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.PROCEDURES_HUE = "290";
 /** @export */ Blockly.Msg.COLOUR_HUE = "20";
 /** @export */ Blockly.Msg.VARIABLES_DYNAMIC_HUE = "310";
+/** @export */ Blockly.Msg.ENVVAR_HUE = "100";

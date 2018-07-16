@@ -69,6 +69,8 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.DISABLE_BLOCK = "Адключыць блок";
 /** @export */ Blockly.Msg.DUPLICATE_BLOCK = "Дубляваць";
 /** @export */ Blockly.Msg.ENABLE_BLOCK = "Уключыць блок";
+/** @export */ Blockly.Msg.ENVVAR_CONSTANT_HELPURL = "https://www.xwiki.org/xwiki/bin/view/Documentation/DevGuide/Scripting/APIGuide/";  // untranslated
+/** @export */ Blockly.Msg.ENVVAR_CONSTANT_TOOLTIP = "Returns variables predefined in the XWiki context";  // untranslated
 /** @export */ Blockly.Msg.EXPAND_ALL = "Разгарнуць блокі";
 /** @export */ Blockly.Msg.EXPAND_BLOCK = "Разгарнуць блок";
 /** @export */ Blockly.Msg.EXTERNAL_INPUTS = "Знешнія ўваходы";
@@ -428,3 +430,4 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.PROCEDURES_HUE = "290";
 /** @export */ Blockly.Msg.COLOUR_HUE = "20";
 /** @export */ Blockly.Msg.VARIABLES_DYNAMIC_HUE = "310";
+/** @export */ Blockly.Msg.ENVVAR_HUE = "100";

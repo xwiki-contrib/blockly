@@ -69,6 +69,8 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.DISABLE_BLOCK = "ปิดใช้งานบล็อก";
 /** @export */ Blockly.Msg.DUPLICATE_BLOCK = "ทำสำเนา";
 /** @export */ Blockly.Msg.ENABLE_BLOCK = "เปิดใช้งานบล็อก";
+/** @export */ Blockly.Msg.ENVVAR_CONSTANT_HELPURL = "https://www.xwiki.org/xwiki/bin/view/Documentation/DevGuide/Scripting/APIGuide/";  // untranslated
+/** @export */ Blockly.Msg.ENVVAR_CONSTANT_TOOLTIP = "Returns variables predefined in the XWiki context";  // untranslated
 /** @export */ Blockly.Msg.EXPAND_ALL = "ขยายบล็อก";
 /** @export */ Blockly.Msg.EXPAND_BLOCK = "ขยายบล็อก";
 /** @export */ Blockly.Msg.EXTERNAL_INPUTS = "อินพุตภายนอก";
@@ -428,3 +430,4 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.PROCEDURES_HUE = "290";
 /** @export */ Blockly.Msg.COLOUR_HUE = "20";
 /** @export */ Blockly.Msg.VARIABLES_DYNAMIC_HUE = "310";
+/** @export */ Blockly.Msg.ENVVAR_HUE = "100";

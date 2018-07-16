@@ -69,6 +69,8 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.DISABLE_BLOCK = "بلاک ہٹاؤ";
 /** @export */ Blockly.Msg.DUPLICATE_BLOCK = "ڈپلیکیٹ";
 /** @export */ Blockly.Msg.ENABLE_BLOCK = "بلاک فعال کرو";
+/** @export */ Blockly.Msg.ENVVAR_CONSTANT_HELPURL = "https://www.xwiki.org/xwiki/bin/view/Documentation/DevGuide/Scripting/APIGuide/";  // untranslated
+/** @export */ Blockly.Msg.ENVVAR_CONSTANT_TOOLTIP = "Returns variables predefined in the XWiki context";  // untranslated
 /** @export */ Blockly.Msg.EXPAND_ALL = "بلاکوں کوں کھنڈاؤ";
 /** @export */ Blockly.Msg.EXPAND_BLOCK = "بلاک کھنڈاؤ";
 /** @export */ Blockly.Msg.EXTERNAL_INPUTS = "باہرلے انپٹ";
@@ -428,3 +430,4 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.PROCEDURES_HUE = "290";
 /** @export */ Blockly.Msg.COLOUR_HUE = "20";
 /** @export */ Blockly.Msg.VARIABLES_DYNAMIC_HUE = "310";
+/** @export */ Blockly.Msg.ENVVAR_HUE = "100";

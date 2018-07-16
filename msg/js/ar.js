@@ -69,6 +69,8 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.DISABLE_BLOCK = "عطّل القطعة";
 /** @export */ Blockly.Msg.DUPLICATE_BLOCK = "مكرر";
 /** @export */ Blockly.Msg.ENABLE_BLOCK = "أعد تفعيل القطعة";
+/** @export */ Blockly.Msg.ENVVAR_CONSTANT_HELPURL = "https://www.xwiki.org/xwiki/bin/view/Documentation/DevGuide/Scripting/APIGuide/";  // untranslated
+/** @export */ Blockly.Msg.ENVVAR_CONSTANT_TOOLTIP = "Returns variables predefined in the XWiki context";  // untranslated
 /** @export */ Blockly.Msg.EXPAND_ALL = "وسٌّع القطع";
 /** @export */ Blockly.Msg.EXPAND_BLOCK = "وسٌّع القطعة";
 /** @export */ Blockly.Msg.EXTERNAL_INPUTS = "ادخال خارجي";
@@ -428,3 +430,4 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.PROCEDURES_HUE = "290";
 /** @export */ Blockly.Msg.COLOUR_HUE = "20";
 /** @export */ Blockly.Msg.VARIABLES_DYNAMIC_HUE = "310";
+/** @export */ Blockly.Msg.ENVVAR_HUE = "100";

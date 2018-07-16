@@ -69,6 +69,8 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.DISABLE_BLOCK = "Ezgaitu blokea";
 /** @export */ Blockly.Msg.DUPLICATE_BLOCK = "Bikoiztu";
 /** @export */ Blockly.Msg.ENABLE_BLOCK = "Gaitu blokea";
+/** @export */ Blockly.Msg.ENVVAR_CONSTANT_HELPURL = "https://www.xwiki.org/xwiki/bin/view/Documentation/DevGuide/Scripting/APIGuide/";  // untranslated
+/** @export */ Blockly.Msg.ENVVAR_CONSTANT_TOOLTIP = "Returns variables predefined in the XWiki context";  // untranslated
 /** @export */ Blockly.Msg.EXPAND_ALL = "Expand Blocks";  // untranslated
 /** @export */ Blockly.Msg.EXPAND_BLOCK = "Expand Block";  // untranslated
 /** @export */ Blockly.Msg.EXTERNAL_INPUTS = "Kanpoko sarrerak";
@@ -428,3 +430,4 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.PROCEDURES_HUE = "290";
 /** @export */ Blockly.Msg.COLOUR_HUE = "20";
 /** @export */ Blockly.Msg.VARIABLES_DYNAMIC_HUE = "310";
+/** @export */ Blockly.Msg.ENVVAR_HUE = "100";

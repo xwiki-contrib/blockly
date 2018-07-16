@@ -14,6 +14,7 @@ var MSG = {
   catColour: "Colour",
   catVariables: "Variables",
   catFunctions: "Functions",
+  catEnvVar: "Context Vars",
   listVariable: "list",
   textVariable: "text",
   httpRequestError: "There was a problem with the request.",
