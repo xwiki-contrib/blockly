@@ -70,7 +70,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.DUPLICATE_BLOCK = "ನಕಲ್";
 /** @export */ Blockly.Msg.ENABLE_BLOCK = "ತಡೆನ್ ಸಕ್ರಿಯೊ ಮಲ್ಪು";
 /** @export */ Blockly.Msg.ENVVAR_CONSTANT_HELPURL = "https://www.xwiki.org/xwiki/bin/view/Documentation/DevGuide/Scripting/APIGuide/";  // untranslated
-/** @export */ Blockly.Msg.ENVVAR_CONSTANT_TOOLTIP = "Returns variables predefined in the XWiki context";  // untranslated
+/** @export */ Blockly.Msg.ENVVAR_CONSTANT_TOOLTIP = "Return XWiki script variables";  // untranslated
 /** @export */ Blockly.Msg.EXPAND_ALL = "ಮಾತಾ ತಡೆಕ್ಲೆನ ಮಾಹಿತಿನ್ ಪರಡಾವು";
 /** @export */ Blockly.Msg.EXPAND_BLOCK = "ಬ್ಲಾಕ್‍ದ ಮಾಹಿತಿನ್ ಪರಡಾವು";
 /** @export */ Blockly.Msg.EXTERNAL_INPUTS = "ಪಿದಯಿದ ಪರಿಪು";

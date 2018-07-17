@@ -70,7 +70,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.DUPLICATE_BLOCK = "کپی کردن";
 /** @export */ Blockly.Msg.ENABLE_BLOCK = "کنشتگر کردن برشت";
 /** @export */ Blockly.Msg.ENVVAR_CONSTANT_HELPURL = "https://www.xwiki.org/xwiki/bin/view/Documentation/DevGuide/Scripting/APIGuide/";  // untranslated
-/** @export */ Blockly.Msg.ENVVAR_CONSTANT_TOOLTIP = "Returns variables predefined in the XWiki context";  // untranslated
+/** @export */ Blockly.Msg.ENVVAR_CONSTANT_TOOLTIP = "Return XWiki script variables";  // untranslated
 /** @export */ Blockly.Msg.EXPAND_ALL = "گپ کردن برشتیا";
 /** @export */ Blockly.Msg.EXPAND_BLOCK = "گپ کردن برشت";
 /** @export */ Blockly.Msg.EXTERNAL_INPUTS = "داده یا وه دری";

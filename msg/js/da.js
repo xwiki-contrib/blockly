@@ -70,7 +70,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.DUPLICATE_BLOCK = "Duplikér";
 /** @export */ Blockly.Msg.ENABLE_BLOCK = "Aktivér blok";
 /** @export */ Blockly.Msg.ENVVAR_CONSTANT_HELPURL = "https://www.xwiki.org/xwiki/bin/view/Documentation/DevGuide/Scripting/APIGuide/";  // untranslated
-/** @export */ Blockly.Msg.ENVVAR_CONSTANT_TOOLTIP = "Returns variables predefined in the XWiki context";  // untranslated
+/** @export */ Blockly.Msg.ENVVAR_CONSTANT_TOOLTIP = "Return XWiki script variables";  // untranslated
 /** @export */ Blockly.Msg.EXPAND_ALL = "Fold blokkene ud";
 /** @export */ Blockly.Msg.EXPAND_BLOCK = "Fold blokken ud";
 /** @export */ Blockly.Msg.EXTERNAL_INPUTS = "Udvendige inputs";

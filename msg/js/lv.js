@@ -70,7 +70,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.DUPLICATE_BLOCK = "Dublēt";
 /** @export */ Blockly.Msg.ENABLE_BLOCK = "Iespējot bloku";
 /** @export */ Blockly.Msg.ENVVAR_CONSTANT_HELPURL = "https://www.xwiki.org/xwiki/bin/view/Documentation/DevGuide/Scripting/APIGuide/";  // untranslated
-/** @export */ Blockly.Msg.ENVVAR_CONSTANT_TOOLTIP = "Returns variables predefined in the XWiki context";  // untranslated
+/** @export */ Blockly.Msg.ENVVAR_CONSTANT_TOOLTIP = "Return XWiki script variables";  // untranslated
 /** @export */ Blockly.Msg.EXPAND_ALL = "Izvērst blokus";
 /** @export */ Blockly.Msg.EXPAND_BLOCK = "Izvērst bloku";
 /** @export */ Blockly.Msg.EXTERNAL_INPUTS = "Ārējie ievaddati";

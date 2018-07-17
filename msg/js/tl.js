@@ -70,7 +70,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.DUPLICATE_BLOCK = "Kaparehas";
 /** @export */ Blockly.Msg.ENABLE_BLOCK = "Bigyan ng bisa ang Block";
 /** @export */ Blockly.Msg.ENVVAR_CONSTANT_HELPURL = "https://www.xwiki.org/xwiki/bin/view/Documentation/DevGuide/Scripting/APIGuide/";  // untranslated
-/** @export */ Blockly.Msg.ENVVAR_CONSTANT_TOOLTIP = "Returns variables predefined in the XWiki context";  // untranslated
+/** @export */ Blockly.Msg.ENVVAR_CONSTANT_TOOLTIP = "Return XWiki script variables";  // untranslated
 /** @export */ Blockly.Msg.EXPAND_ALL = "Palawakin ang Blocks";
 /** @export */ Blockly.Msg.EXPAND_BLOCK = "Palawakin ang Block";
 /** @export */ Blockly.Msg.EXTERNAL_INPUTS = "Panlabas na Inputs";

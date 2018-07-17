@@ -70,7 +70,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.DUPLICATE_BLOCK = "Másolat";
 /** @export */ Blockly.Msg.ENABLE_BLOCK = "Blokk engedélyezése";
 /** @export */ Blockly.Msg.ENVVAR_CONSTANT_HELPURL = "https://www.xwiki.org/xwiki/bin/view/Documentation/DevGuide/Scripting/APIGuide/";  // untranslated
-/** @export */ Blockly.Msg.ENVVAR_CONSTANT_TOOLTIP = "Returns variables predefined in the XWiki context";  // untranslated
+/** @export */ Blockly.Msg.ENVVAR_CONSTANT_TOOLTIP = "Return XWiki script variables";  // untranslated
 /** @export */ Blockly.Msg.EXPAND_ALL = "Blokkok kinyitása";
 /** @export */ Blockly.Msg.EXPAND_BLOCK = "Blokk kinyitása";
 /** @export */ Blockly.Msg.EXTERNAL_INPUTS = "Külső kapcsolatok";

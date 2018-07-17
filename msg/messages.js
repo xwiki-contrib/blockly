@@ -66,7 +66,7 @@ Blockly.Msg.VARIABLES_HUE = '330';
 Blockly.Msg.VARIABLES_DYNAMIC_HUE = '310';
 /// {{Notranslate}} Hue value for all procedure blocks.
 Blockly.Msg.PROCEDURES_HUE = '290';
-/// {{Notranslate}} Hue value for all procedure blocks.
+/// {{Notranslate}} Hue value for all XWiki variable blocks.
 Blockly.Msg.ENVVAR_HUE = '100';
 
 /// default name - A simple, general default name for a variable, preferably short.
@@ -1196,7 +1196,7 @@ Blockly.Msg.PROCEDURES_IFRETURN_HELPURL = 'http://c2.com/cgi/wiki?GuardClause';
 /// warning - This appears if the user tries to use this block outside of a function definition.
 Blockly.Msg.PROCEDURES_IFRETURN_WARNING = 'Warning: This block may be used only within a function definition.';
 
-/// {{Optional}} url - Information about the environmental variables in XWiki, $services, $doc, $xwiki, etc
+/// {{Optional}} url - Information about the XWiki Script Variables such as $services, $doc, $xwiki, etc
 Blockly.Msg.ENVVAR_CONSTANT_HELPURL = 'https://www.xwiki.org/xwiki/bin/view/Documentation/DevGuide/Scripting/APIGuide/';
 /// tooltip - Provides the specified XWiki context variable.
-Blockly.Msg.ENVVAR_CONSTANT_TOOLTIP = 'Returns variables predefined in the XWiki context';
+Blockly.Msg.ENVVAR_CONSTANT_TOOLTIP = 'Return XWiki script variables';

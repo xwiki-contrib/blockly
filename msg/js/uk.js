@@ -70,7 +70,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.DUPLICATE_BLOCK = "Дублювати";
 /** @export */ Blockly.Msg.ENABLE_BLOCK = "Увімкнути блок";
 /** @export */ Blockly.Msg.ENVVAR_CONSTANT_HELPURL = "https://www.xwiki.org/xwiki/bin/view/Documentation/DevGuide/Scripting/APIGuide/";  // untranslated
-/** @export */ Blockly.Msg.ENVVAR_CONSTANT_TOOLTIP = "Returns variables predefined in the XWiki context";  // untranslated
+/** @export */ Blockly.Msg.ENVVAR_CONSTANT_TOOLTIP = "Return XWiki script variables";  // untranslated
 /** @export */ Blockly.Msg.EXPAND_ALL = "Розгорнути блоки";
 /** @export */ Blockly.Msg.EXPAND_BLOCK = "Розгорнути блок";
 /** @export */ Blockly.Msg.EXTERNAL_INPUTS = "Зовнішні входи";

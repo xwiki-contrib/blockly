@@ -70,7 +70,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.DUPLICATE_BLOCK = "ထုတ်ႇ";
 /** @export */ Blockly.Msg.ENABLE_BLOCK = "ပိုတ်ႇၸႂ်ႉ လွင်ႈႁႄႉတတ်း";
 /** @export */ Blockly.Msg.ENVVAR_CONSTANT_HELPURL = "https://www.xwiki.org/xwiki/bin/view/Documentation/DevGuide/Scripting/APIGuide/";  // untranslated
-/** @export */ Blockly.Msg.ENVVAR_CONSTANT_TOOLTIP = "Returns variables predefined in the XWiki context";  // untranslated
+/** @export */ Blockly.Msg.ENVVAR_CONSTANT_TOOLTIP = "Return XWiki script variables";  // untranslated
 /** @export */ Blockly.Msg.EXPAND_ALL = "ၶႂၢၵ်ႈၸိူဝ်းႁႄႉတတ်း";
 /** @export */ Blockly.Msg.EXPAND_BLOCK = "ၶႂၢၵ်ႈလွင်ႈႁႄႉတတ်း";
 /** @export */ Blockly.Msg.EXTERNAL_INPUTS = "ၶိူင်ႈဢၼ်လုၵ်ႉတၢင်းၼွၵ်ႈၶဝ်ႈမႃး";

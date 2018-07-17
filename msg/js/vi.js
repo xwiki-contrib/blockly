@@ -70,7 +70,7 @@ goog.require('Blockly.Msg');
 /** @export */ Blockly.Msg.DUPLICATE_BLOCK = "Tạo Bản Sao";
 /** @export */ Blockly.Msg.ENABLE_BLOCK = "Phục Hồi Tác Dụng";
 /** @export */ Blockly.Msg.ENVVAR_CONSTANT_HELPURL = "https://www.xwiki.org/xwiki/bin/view/Documentation/DevGuide/Scripting/APIGuide/";  // untranslated
-/** @export */ Blockly.Msg.ENVVAR_CONSTANT_TOOLTIP = "Returns variables predefined in the XWiki context";  // untranslated
+/** @export */ Blockly.Msg.ENVVAR_CONSTANT_TOOLTIP = "Return XWiki script variables";  // untranslated
 /** @export */ Blockly.Msg.EXPAND_ALL = "Mở Lớn Mọi Mảnh";
 /** @export */ Blockly.Msg.EXPAND_BLOCK = "Mở Lớn Mảnh";
 /** @export */ Blockly.Msg.EXTERNAL_INPUTS = "Chỗ Gắn Bên Ngoài";
