@@ -83,6 +83,8 @@ Blockly.Msg.DUPLICATE_BLOCK = 'Duplicate';
 Blockly.Msg.ADD_COMMENT = 'Add Comment';
 /// context menu - Remove the descriptive comment from the selected block.
 Blockly.Msg.REMOVE_COMMENT = 'Remove Comment';
+/// context menu - Make a copy of the selected workspace comment.\n{{Identical|Duplicate}}
+Blockly.Msg.DUPLICATE_COMMENT = 'Duplicate Comment';
 /// context menu - Change from 'external' to 'inline' mode for displaying blocks used as inputs to the selected block.  See [[Translating:Blockly#context_menus]].
 Blockly.Msg.EXTERNAL_INPUTS = 'External Inputs';
 /// context menu - Change from 'internal' to 'external' mode for displaying blocks used as inputs to the selected block.  See [[Translating:Blockly#context_menus]].
@@ -1200,3 +1202,7 @@ Blockly.Msg.PROCEDURES_IFRETURN_WARNING = 'Warning: This block may be used only 
 Blockly.Msg.ENVVAR_CONSTANT_HELPURL = 'https://www.xwiki.org/xwiki/bin/view/Documentation/DevGuide/Scripting/APIGuide/';
 /// tooltip - Provides the specified XWiki context variable.
 Blockly.Msg.ENVVAR_CONSTANT_TOOLTIP = 'Return XWiki script variables';
+
+/// comment text - This text appears in a new workspace comment, to hint that
+/// the user can type here.
+Blockly.Msg.WORKSPACE_COMMENT_DEFAULT_TEXT = 'Say something...';
