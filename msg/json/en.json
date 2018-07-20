@@ -1,7 +1,7 @@
 {
 	"@metadata": {
 		"author": "Ellen Spertus <ellen.spertus@gmail.com>",
-		"lastupdated": "2018-07-17 19:08:10.794777",
+		"lastupdated": "2018-07-20 02:22:06.243844",
 		"locale": "en",
 		"messagedocumentation" : "qqq"
 	},
@@ -400,5 +400,13 @@
 	"PROCEDURES_IFRETURN_WARNING": "Warning: This block may be used only within a function definition.",
 	"ENVVAR_CONSTANT_HELPURL": "https://www.xwiki.org/xwiki/bin/view/Documentation/DevGuide/Scripting/APIGuide/",
 	"ENVVAR_CONSTANT_TOOLTIP": "Return XWiki script variables",
+	"ENVVAR_ATTRIB_HELPURL": "http://velocity.apache.org/engine/1.7/vtl-reference.html#properties",
+	"ENVVAR_ATTRIB_TOOLTIP": "Attributes of XWiki Script Object",
+	"ENVVAR_METHOD_HELPURL": "http://velocity.apache.org/engine/1.7/vtl-reference.html#methods",
+	"ENVVAR_METHOD_TOOLTIP": "Methods of XWiki Script Object",
+	"ENVVAR_ATTRIB_CUSTOM_HELPURL": "http://velocity.apache.org/engine/1.7/vtl-reference.html#properties",
+	"ENVVAR_ATTRIB_CUSTOM_TOOLTIP": "Attributes of XWiki Dynamic Script Binding",
+	"ENVVAR_METHOD_CUSTOM_HELPURL": "http://velocity.apache.org/engine/1.7/vtl-reference.html#methods",
+	"ENVVAR_METHOD_CUSTOM_TOOLTIP": "Methods of XWiki Dynamic Script Binding",
 	"WORKSPACE_COMMENT_DEFAULT_TEXT": "Say something..."
 }

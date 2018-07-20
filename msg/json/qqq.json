@@ -394,5 +394,13 @@
 	"PROCEDURES_IFRETURN_WARNING": "warning - This appears if the user tries to use this block outside of a function definition.",
 	"ENVVAR_CONSTANT_HELPURL": "{{Optional}} url - Information about the XWiki Script Variables such as $services, $doc, $xwiki, etc",
 	"ENVVAR_CONSTANT_TOOLTIP": "tooltip - Provides the specified XWiki context variable.",
+	"ENVVAR_ATTRIB_HELPURL": "{{Optional}} url - Information about properties (http://velocity.apache.org/engine/1.7/vtl-reference.html#properties) in Velocity",
+	"ENVVAR_ATTRIB_TOOLTIP": "tooltip - Shows the attributes of a class",
+	"ENVVAR_METHOD_HELPURL": "{{Optional}} url - Information about methods (http://velocity.apache.org/engine/1.7/vtl-reference.html#methods) in Velocity",
+	"ENVVAR_METHOD_TOOLTIP": "tooltip - Shows the methods of a class",
+	"ENVVAR_ATTRIB_CUSTOM_HELPURL": "{{Optional}} url - Information about properties (http://velocity.apache.org/engine/1.7/vtl-reference.html#properties) in Velocity",
+	"ENVVAR_ATTRIB_CUSTOM_TOOLTIP": "tooltip - Shows the attributes of a dynamic script binding",
+	"ENVVAR_METHOD_CUSTOM_HELPURL": "{{Optional}} url - Information about methods (http://velocity.apache.org/engine/1.7/vtl-reference.html#methods) in Velocity",
+	"ENVVAR_METHOD_CUSTOM_TOOLTIP": "tooltip - Shows the methods of a dynamic script binding",
 	"WORKSPACE_COMMENT_DEFAULT_TEXT": "comment text - This text appears in a new workspace comment, to hint that the user can type here."
 }

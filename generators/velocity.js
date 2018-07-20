@@ -138,11 +138,7 @@ Blockly.Velocity.init = function(workspace) {
 
   // Declare all of the variables.
   if (defvars.length) {
-    var code = "";
-    for (var i=0; i<defvars.length; i++) {
-        code += '#set( ' + defvars[i] + ' )';
-    }
-    Blockly.Velocity.definitions_['variables'] = code;
+    Blockly.Velocity.definitions_['variables'] = '';
   }
 };
 

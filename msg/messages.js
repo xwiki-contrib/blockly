@@ -1203,6 +1203,27 @@ Blockly.Msg.ENVVAR_CONSTANT_HELPURL = 'https://www.xwiki.org/xwiki/bin/view/Docu
 /// tooltip - Provides the specified XWiki context variable.
 Blockly.Msg.ENVVAR_CONSTANT_TOOLTIP = 'Return XWiki script variables';
 
+/// {{Optional}} url - Information about properties (http://velocity.apache.org/engine/1.7/vtl-reference.html#properties) in Velocity 
+Blockly.Msg.ENVVAR_ATTRIB_HELPURL = 'http://velocity.apache.org/engine/1.7/vtl-reference.html#properties';
+/// tooltip - Shows the attributes of a class
+Blockly.Msg.ENVVAR_ATTRIB_TOOLTIP = 'Attributes of XWiki Script Object';
+
+/// {{Optional}} url - Information about methods (http://velocity.apache.org/engine/1.7/vtl-reference.html#methods) in Velocity
+Blockly.Msg.ENVVAR_METHOD_HELPURL = 'http://velocity.apache.org/engine/1.7/vtl-reference.html#methods';
+/// tooltip - Shows the methods of a class
+Blockly.Msg.ENVVAR_METHOD_TOOLTIP = 'Methods of XWiki Script Object';
+
+/// {{Optional}} url - Information about properties (http://velocity.apache.org/engine/1.7/vtl-reference.html#properties) in Velocity 
+Blockly.Msg.ENVVAR_ATTRIB_CUSTOM_HELPURL = 'http://velocity.apache.org/engine/1.7/vtl-reference.html#properties';
+/// tooltip - Shows the attributes of a dynamic script binding
+Blockly.Msg.ENVVAR_ATTRIB_CUSTOM_TOOLTIP = 'Attributes of XWiki Dynamic Script Binding';
+
+/// {{Optional}} url - Information about methods (http://velocity.apache.org/engine/1.7/vtl-reference.html#methods) in Velocity
+Blockly.Msg.ENVVAR_METHOD_CUSTOM_HELPURL = 'http://velocity.apache.org/engine/1.7/vtl-reference.html#methods';
+/// tooltip - Shows the methods of a dynamic script binding
+Blockly.Msg.ENVVAR_METHOD_CUSTOM_TOOLTIP = 'Methods of XWiki Dynamic Script Binding';
+
+
 /// comment text - This text appears in a new workspace comment, to hint that
 /// the user can type here.
 Blockly.Msg.WORKSPACE_COMMENT_DEFAULT_TEXT = 'Say something...';
