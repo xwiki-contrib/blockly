@@ -1198,6 +1198,12 @@ Blockly.Msg.PROCEDURES_IFRETURN_HELPURL = 'http://c2.com/cgi/wiki?GuardClause';
 /// warning - This appears if the user tries to use this block outside of a function definition.
 Blockly.Msg.PROCEDURES_IFRETURN_WARNING = 'Warning: This block may be used only within a function definition.';
 
+// Envvar Blocks.
+/// {{Optional}} url - Information about how computers represent text (sometimes referred to as ''string''s).
+Blockly.Msg.ENVVAR_TEXT_HELPURL = 'https://en.wikipedia.org/wiki/String_(computer_science)';
+/// tooltip
+Blockly.Msg.ENVVAR_TEXT_TOOLTIP = 'An input field for method/attribute name';
+
 /// {{Optional}} url - Information about the XWiki Script Variables such as $services, $doc, $xwiki, etc
 Blockly.Msg.ENVVAR_CONSTANT_HELPURL = 'https://www.xwiki.org/xwiki/bin/view/Documentation/DevGuide/Scripting/APIGuide/';
 /// tooltip - Provides the specified XWiki context variable.
@@ -1210,18 +1216,19 @@ Blockly.Msg.ENVVAR_ATTRIB_TOOLTIP = 'Attributes of XWiki Script Object';
 
 /// {{Optional}} url - Information about methods (http://velocity.apache.org/engine/1.7/vtl-reference.html#methods) in Velocity
 Blockly.Msg.ENVVAR_METHOD_HELPURL = 'http://velocity.apache.org/engine/1.7/vtl-reference.html#methods';
+/// block text
+Blockly.Msg.ENVVAR_METHOD_CREATEWITH = 'Arguments';
 /// tooltip - Shows the methods of a class
 Blockly.Msg.ENVVAR_METHOD_TOOLTIP = 'Methods of XWiki Script Object';
 
-/// {{Optional}} url - Information about properties (http://velocity.apache.org/engine/1.7/vtl-reference.html#properties) in Velocity 
-Blockly.Msg.ENVVAR_ATTRIB_CUSTOM_HELPURL = 'http://velocity.apache.org/engine/1.7/vtl-reference.html#properties';
-/// tooltip - Shows the attributes of a dynamic script binding
-Blockly.Msg.ENVVAR_ATTRIB_CUSTOM_TOOLTIP = 'Attributes of XWiki Dynamic Script Binding';
-
-/// {{Optional}} url - Information about methods (http://velocity.apache.org/engine/1.7/vtl-reference.html#methods) in Velocity
-Blockly.Msg.ENVVAR_METHOD_CUSTOM_HELPURL = 'http://velocity.apache.org/engine/1.7/vtl-reference.html#methods';
-/// tooltip - Shows the methods of a dynamic script binding
-Blockly.Msg.ENVVAR_METHOD_CUSTOM_TOOLTIP = 'Methods of XWiki Dynamic Script Binding';
+/// block text - This is shown when the programmer wants to change the number of arguments being passed to a function.
+Blockly.Msg.ENVVAR_METHOD_CREATE_ARGS_TITLE = 'Add arguments';
+/// tooltip
+Blockly.Msg.ENVVAR_METHOD_CREATE_ARGS_TOOLTIP = 'Add or remove arguments as needed for your method call';
+/// block text
+Blockly.Msg.ENVVAR_METHOD_CREATE_ARG_TITLE = 'Argument';
+/// tooltip
+Blockly.Msg.ENVVAR_METHOD_CREATE_ARG_TOOLTIP = 'Add an argument to the function.';
 
 
 /// comment text - This text appears in a new workspace comment, to hint that

@@ -204,9 +204,9 @@ Blockly.Velocity.scrub_ = function(block, code) {
     if (comment) {
       if (block.getProcedureDef) {
         // Use a comment block for function comments.
-        commentCode += '#**\n' +
-                       Blockly.Velocity.prefixLines(comment + '\n', '') +
-                       ' *#\n';
+        commentCode += '#*\n' +
+                       Blockly.Velocity.prefixLines(comment + '\n', ' ') +
+                       '*#\n';
       } else {
         commentCode += Blockly.Velocity.prefixLines(comment + '\n', '## ');
       }
