@@ -1,23 +1,15 @@
 /**
- * @fileoverview Generating Velocity for variable blocks.
+ * @fileoverview Generating Velocity for query blocks.
  * @author vivekbalasundaram@gmail.com (Vivek Iyer)
  */
 'use strict';
 
-goog.provide('Blockly.Velocity.EnvVariables');
+goog.provide('Blockly.Velocity.Queries');
 
 goog.require('Blockly.Velocity');
 
 
-Blockly.Velocity['envvar_constant'] = function(block) {
-  return [block.getFieldValue('ENVVAR_CONSTANT'),Blockly.Velocity.ORDER_MEMBER];
-};
-
-Blockly.Velocity['envvar_method'] = function(block) {
-  // XWiki script binding
-  var code = Blockly.Velocity.valueToCode(block, 'ENVVAR_METHOD', Blockly.Velocity.ORDER_ATOMIC) || '';
-  // Method name
-  var method_name = Blockly.Velocity.valueToCode(block, 'ENVVAR_METHOD_TEXT', Blockly.Velocity.ORDER_ATOMIC) || '';
+Blockly.Velocity['queries_select_args'] = function(block) {
   var args = '';
   // Call a method made up of any number of args of any type.
   switch (block.itemCount_) {
@@ -49,21 +41,12 @@ Blockly.Velocity['envvar_method'] = function(block) {
           Blockly.Variables.NAME_TYPE);
       args = elems.join(', ')
   }
-  code = method_name ? code + "." + method_name + "(" + args + ")": code;
+  var code = "select " + args;
   return [code, Blockly.Velocity.ORDER_ATOMIC];
 };
 
-Blockly.Velocity['envvar_attrib'] = function(block) {
-  // Dynamic XWiki script binding
-  var code = Blockly.Velocity.valueToCode(block, 'ENVVAR_ATTRIB', Blockly.Velocity.ORDER_ATOMIC) || '';
-  // Attribute name
-  var attrib_name = block.getFieldValue('ENVVAR_ATTRIB_TEXT');
-  code = attrib_name ? code + "." + attrib_name : code;
-  return [code, Blockly.Velocity.ORDER_ATOMIC];
-};
-
-Blockly.Velocity['envvar_text'] = function(block) {
-  // Text value.
-  var code = block.getFieldValue('ENVVAR_TEXT');
+Blockly.Velocity['queries_distinct'] = function(block) {
+  var value_distinct_attrib = Blockly.Velocity.valueToCode(block, 'DISTINCT_ATTRIB', Blockly.Velocity.ORDER_ATOMIC);
+  var code = 'distinct ' + value_distinct_attrib;
   return [code, Blockly.Velocity.ORDER_ATOMIC];
 };

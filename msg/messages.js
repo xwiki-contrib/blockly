@@ -60,6 +60,8 @@ Blockly.Msg.TEXTS_HUE = '160';
 Blockly.Msg.LISTS_HUE = '260';
 /// {{Notranslate}} Hue value for all colour blocks.
 Blockly.Msg.COLOUR_HUE = '20';
+/// {{Notranslate}} Hue value for all query blocks.
+Blockly.Msg.QUERIES_HUE = '50';
 /// {{Notranslate}} Hue value for all variable blocks.
 Blockly.Msg.VARIABLES_HUE = '330';
 /// {{Notranslate}} Hue value for all variable dynamic blocks.
@@ -1230,6 +1232,30 @@ Blockly.Msg.ENVVAR_METHOD_CREATE_ARG_TITLE = 'Argument';
 /// tooltip
 Blockly.Msg.ENVVAR_METHOD_CREATE_ARG_TOOLTIP = 'Add an argument to the function.';
 
+
+// Query blocks
+/// {{Optional}} url - Information about how to write select statement in HQL https://docs.jboss.org/hibernate/orm/3.5/reference/en/html/queryhql.html#queryhql-select
+Blockly.Msg.QUERIES_SELECT_ARGS_HELPURL = 'https://docs.jboss.org/hibernate/orm/3.5/reference/en/html/queryhql.html#queryhql-select';
+/// tooltip
+Blockly.Msg.QUERIES_SELECT_ARGS_TOOLTIP = 'The select clause picks which objects and properties to return in the query result set.';
+
+/// block text
+Blockly.Msg.QUERIES_SELECT_ARGS_CREATEWITH = 'Select Clause Arguments';
+
+/// block text - This is shown when the programmer wants to change the number of arguments being passed to the select query.
+Blockly.Msg.QUERIES_SELECT_ARGS_TITLE = 'Add arguments';
+/// tooltip
+Blockly.Msg.QUERIES_SELECT_ARGS_CONTAINER_TOOLTIP = 'Add, remove, or reorder sections to reconfigure this text block.';
+
+/// block text
+Blockly.Msg.QUERIES_SELECT_ARGS_ITEM_TITLE = 'Item';
+/// tooltip
+Blockly.Msg.QUERIES_SELECT_ARGS_ITEM_TOOLTIP = 'Add an object to the select statement.';
+
+/// {{Optional}} url - Information about how to use distinct keyword in HQL https://docs.jboss.org/hibernate/orm/3.5/reference/en/html/queryhql.html#queryhql-aggregation
+Blockly.Msg.QUERIES_DISTINCT_HELPURL = 'https://docs.jboss.org/hibernate/orm/3.5/reference/en/html/queryhql.html#queryhql-select';
+/// tooltip
+Blockly.Msg.QUERIES_DISTINCT_TOOLTIP = 'The distinct statement is used to return only distinct (different) values.';
 
 /// comment text - This text appears in a new workspace comment, to hint that
 /// the user can type here.

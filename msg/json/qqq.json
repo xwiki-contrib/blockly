@@ -405,5 +405,14 @@
 	"ENVVAR_METHOD_CREATE_ARGS_TOOLTIP": "tooltip",
 	"ENVVAR_METHOD_CREATE_ARG_TITLE": "block text",
 	"ENVVAR_METHOD_CREATE_ARG_TOOLTIP": "tooltip",
+	"QUERIES_SELECT_ARGS_HELPURL": "{{Optional}} url - Information about how to write select statement in HQL https://docs.jboss.org/hibernate/orm/3.5/reference/en/html/queryhql.html#queryhql-select",
+	"QUERIES_SELECT_ARGS_TOOLTIP": "tooltip",
+	"QUERIES_SELECT_ARGS_CREATEWITH": "block text",
+	"QUERIES_SELECT_ARGS_TITLE": "block text - This is shown when the programmer wants to change the number of arguments being passed to the select query.",
+	"QUERIES_SELECT_ARGS_CONTAINER_TOOLTIP": "tooltip",
+	"QUERIES_SELECT_ARGS_ITEM_TITLE": "block text",
+	"QUERIES_SELECT_ARGS_ITEM_TOOLTIP": "tooltip",
+	"QUERIES_DISTINCT_HELPURL": "{{Optional}} url - Information about how to use distinct keyword in HQL https://docs.jboss.org/hibernate/orm/3.5/reference/en/html/queryhql.html#queryhql-aggregation",
+	"QUERIES_DISTINCT_TOOLTIP": "tooltip",
 	"WORKSPACE_COMMENT_DEFAULT_TEXT": "comment text - This text appears in a new workspace comment, to hint that the user can type here."
 }

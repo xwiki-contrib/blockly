@@ -1,7 +1,7 @@
 {
 	"@metadata": {
 		"author": "Ellen Spertus <ellen.spertus@gmail.com>",
-		"lastupdated": "2018-07-24 03:35:51.595483",
+		"lastupdated": "2018-07-26 16:58:09.817636",
 		"locale": "en",
 		"messagedocumentation" : "qqq"
 	},
@@ -411,5 +411,14 @@
 	"ENVVAR_METHOD_CREATE_ARGS_TOOLTIP": "Add or remove arguments as needed for your method call",
 	"ENVVAR_METHOD_CREATE_ARG_TITLE": "Argument",
 	"ENVVAR_METHOD_CREATE_ARG_TOOLTIP": "Add an argument to the function.",
+	"QUERIES_SELECT_ARGS_HELPURL": "https://docs.jboss.org/hibernate/orm/3.5/reference/en/html/queryhql.html#queryhql-select",
+	"QUERIES_SELECT_ARGS_TOOLTIP": "The select clause picks which objects and properties to return in the query result set.",
+	"QUERIES_SELECT_ARGS_CREATEWITH": "Select Clause Arguments",
+	"QUERIES_SELECT_ARGS_TITLE": "Add arguments",
+	"QUERIES_SELECT_ARGS_CONTAINER_TOOLTIP": "Add, remove, or reorder sections to reconfigure this text block.",
+	"QUERIES_SELECT_ARGS_ITEM_TITLE": "Item",
+	"QUERIES_SELECT_ARGS_ITEM_TOOLTIP": "Add an object to the select statement.",
+	"QUERIES_DISTINCT_HELPURL": "https://docs.jboss.org/hibernate/orm/3.5/reference/en/html/queryhql.html#queryhql-select",
+	"QUERIES_DISTINCT_TOOLTIP": "The distinct statement is used to return only distinct (different) values.",
 	"WORKSPACE_COMMENT_DEFAULT_TEXT": "Say something..."
 }

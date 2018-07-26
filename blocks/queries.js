@@ -1,5 +1,5 @@
 /**
- * @fileoverview XWiki Script Binding blocks for Blockly.
+ * @fileoverview HQL Query blocks for Blockly.
  *
  * This file is scraped to extract a .json file of block definitions. The array
  * passed to defineBlocksWithJsonArray(..) must be strict JSON: double quotes
@@ -9,7 +9,7 @@
  */
 'use strict';
 
-goog.provide('Blockly.Constants.EnvVariables');
+goog.provide('Blockly.Constants.Queries');
 
 goog.require('Blockly.Blocks');
 goog.require('Blockly');
@@ -17,74 +17,25 @@ goog.require('Blockly');
 
 /**
  * Unused constant for the common HSV hue for all blocks in this category.
- * @deprecated Use Blockly.Msg.ENVVAR_HUE. (2018 April 5)
+ * @deprecated Use Blockly.Msg.QUERIES_HUE. (2018 April 5)
  */
-Blockly.Constants.EnvVariables.HUE = 100;
+Blockly.Constants.Queries.HUE = 150;
 
 Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
-  // Block for constants: $document, $xwiki, $context, $services.
+  // Block for HQL queries
   {
-    "type": "envvar_text",
-    "message0": "%1",
-    "args0": [{
-      "type": "field_input",
-      "name": "ENVVAR_TEXT",
-      "text": ""
-    }],
+    "type": "queries_select_args",
+    "message0": "",
     "output": "String",
-    "colour": "%{BKY_ENVVAR_HUE}",
-    "helpUrl": "%{BKY_ENVVAR_TEXT_HELPURL}",
-    "tooltip": "%{BKY_ENVVAR_TEXT_TOOLTIP}",
-    "extensions": [
-      "parent_tooltip_when_inline"
-    ]
+    "colour": "%{BKY_QUERIES_HUE}",
+    "inputsInline": true,
+    "tooltip": "%{BKY_QUERIES_SELECT_ARGS_TOOLTIP}",
+    "helpUrl": "%{BKY_QUERIES_SELECT_ARGS_HELPURL}",
+    "mutator": "queries_select_args_mutator"
   },
   {
-    "type": "envvar_constant",
-    "message0": "XWiki Binding %1",
-    "args0": [
-      {
-        "type": "field_dropdown",
-        "name": "ENVVAR_CONSTANT",
-        "options": [
-          ["Document", "$doc"],
-          ["XWiki", "$xwiki"],
-          ["Context", "$xcontext"],
-          ["Services", "$services"],
-          ["Request", "$request"],
-          ["Response", "$response"]
-        ]
-      }
-    ],
-    "output": "null",
-    "colour": "%{BKY_ENVVAR_HUE}",
-    "tooltip": "%{BKY_ENVVAR_CONSTANT_TOOLTIP}",
-    "helpUrl": "%{BKY_ENVVAR_CONSTANT_HELPURL}"
-  },
-  {
-    "type": "envvar_method",
-    "message0": "XWiki Binding %1 Method %2",
-    "args0": [
-      {
-        "type": "input_value",
-        "name": "ENVVAR_METHOD"
-      },
-      {
-        "type": "input_value",
-        "name": "ENVVAR_METHOD_TEXT",
-        "check": "String"
-      }
-    ],
-    "inputsInline": false,
-    "output": "null",
-    "colour": "%{BKY_ENVVAR_HUE}",
-    "tooltip": "%{BKY_ENVVAR_METHOD_TOOLTIP}",
-    "helpUrl": "%{BKY_ENVVAR_METHOD_HELPURL}",
-    "mutator": "envvar_method_args_mutator"
-  },
-  {
-    "type": "envvar_create_args_container",
-    "message0": "%{BKY_ENVVAR_METHOD_CREATE_ARGS_TITLE} %1 %2",
+    "type": "queries_select_args_container",
+    "message0": "%{BKY_QUERIES_SELECT_ARGS_TITLE} %1 %2",
     "args0": [{
       "type": "input_dummy"
     },
@@ -92,48 +43,42 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
       "type": "input_statement",
       "name": "STACK"
     }],
-    "colour": "%{BKY_ENVVAR_HUE}",
-    "tooltip": "%{BKY_ENVVAR_METHOD_CREATE_ARGS_TOOLTIP}",
+    "colour": "%{BKY_QUERIES_HUE}",
+    "tooltip": "%{BKY_QUERIES_SELECT_ARGS_CONTAINER_TOOLTIP}",
     "enableContextMenu": false
   },
   {
-    "type": "envvar_create_args_item",
-    "message0": "%{BKY_ENVVAR_METHOD_CREATE_ARG_TITLE}",
+    "type": "queries_select_args_item",
+    "message0": "%{BKY_QUERIES_SELECT_ARGS_ITEM_TITLE}",
     "previousStatement": null,
     "nextStatement": null,
-    "colour": "%{BKY_ENVVAR_HUE}",
-    "tooltip": "%{BKY_ENVVAR_METHOD_CREATE_ARG_TOOLTIP}",
+    "colour": "%{BKY_QUERIES_HUE}",
+    "tooltip": "%{BKY_QUERIES_SELECT_ARGS_ITEM_TOOLTIP}",
     "enableContextMenu": false
   },
   {
-    "type": "envvar_attrib",
-    "message0": "XWiki Binding %1 Attribute %2",
+    "type": "queries_distinct",
+    "message0": "DISTINCT %1",
     "args0": [
       {
         "type": "input_value",
-        "name": "ENVVAR_ATTRIB"
-      },
-      {
-        "type": "field_input",
-        "name": "ENVVAR_ATTRIB_TEXT",
-        "text": ""
+        "name": "DISTINCT_ATTRIB"
       }
     ],
-    "inputsInline": true,
     "output": "null",
-    "colour": "%{BKY_ENVVAR_HUE}",
-    "tooltip": "%{BKY_ENVVAR_ATTRIB_TOOLTIP}",
-    "helpUrl": "%{BKY_ENVVAR_ATTRIB_HELPURL}"
+    "colour": "%{BKY_COLOUR_HUE}",
+    "tooltip": "%{BKY_QUERIES_DISTINCT_TOOLTIP}",
+    "helpUrl": "%{BKY_QUERIES_DISTINCT_HELPURL}"
   }
 ]);  // END JSON EXTRACT (Do not delete this comment.)
 
 /**
- * Mixin for mutator functions in the 'envvar_method_args_mutator' extension.
+ * Mixin for mutator functions in the 'queries_select_args_mutator' extension.
  * @mixin
  * @augments Blockly.Block
  * @package
  */
-Blockly.Constants.EnvVariables.ENVVAR_METHOD_ARGS_MUTATOR_MIXIN = {
+Blockly.Constants.Queries.QUERIES_SELECT_ARGS_MUTATOR_MIXIN = {
   /**
    * Create XML to represent number of arguments to method call.
    * @return {!Element} XML storage element.
@@ -141,7 +86,7 @@ Blockly.Constants.EnvVariables.ENVVAR_METHOD_ARGS_MUTATOR_MIXIN = {
    */
   mutationToDom: function() {
     var container = document.createElement('mutation');
-    container.setAttribute('args', this.itemCount_);
+    container.setAttribute('item', this.itemCount_);
     return container;
   },
   /**
@@ -150,7 +95,7 @@ Blockly.Constants.EnvVariables.ENVVAR_METHOD_ARGS_MUTATOR_MIXIN = {
    * @this Blockly.Block
    */
   domToMutation: function(xmlElement) {
-    this.itemCount_ = parseInt(xmlElement.getAttribute('args'), 10);
+    this.itemCount_ = parseInt(xmlElement.getAttribute('item'), 10);
     this.updateShape_();
   },
   /**
@@ -160,11 +105,11 @@ Blockly.Constants.EnvVariables.ENVVAR_METHOD_ARGS_MUTATOR_MIXIN = {
    * @this Blockly.Block
    */
   decompose: function(workspace) {
-    var containerBlock = workspace.newBlock('envvar_create_args_container');
+    var containerBlock = workspace.newBlock('queries_select_args_container');
     containerBlock.initSvg();
     var connection = containerBlock.getInput('STACK').connection;
     for (var i = 0; i < this.itemCount_; i++) {
-      var itemBlock = workspace.newBlock('envvar_create_args_item');
+      var itemBlock = workspace.newBlock('queries_select_args_item');
       itemBlock.initSvg();
       connection.connect(itemBlock.previousConnection);
       connection = itemBlock.nextConnection;
@@ -233,7 +178,7 @@ Blockly.Constants.EnvVariables.ENVVAR_METHOD_ARGS_MUTATOR_MIXIN = {
       if (!this.getInput('ADD' + i)) {
         var input = this.appendValueInput('ADD' + i);
         if (i == 0) {
-          input.appendField(Blockly.Msg['ENVVAR_METHOD_CREATEWITH']);
+          input.appendField(Blockly.Msg['QUERIES_SELECT_ARGS_CREATEWITH']);
         }
       }
     }
@@ -251,7 +196,7 @@ Blockly.Constants.EnvVariables.ENVVAR_METHOD_ARGS_MUTATOR_MIXIN = {
  * @package
  * @readonly
  */
-Blockly.Constants.EnvVariables.QUOTE_IMAGE_MIXIN = {
+Blockly.Constants.Queries.QUOTE_IMAGE_MIXIN = {
   /**
    * Image data URI of an LTR opening double quote (same as RTL closing double quote).
    * @readonly
@@ -324,19 +269,19 @@ Blockly.Constants.EnvVariables.QUOTE_IMAGE_MIXIN = {
 
 
 /**
- * Performs final setup of a envvar_method block.
+ * Performs final setup of a queries_select_args block.
  * @this Blockly.Block
  */
-Blockly.Constants.EnvVariables.ENVVAR_METHOD_ARGS_EXTENSION = function() {
+Blockly.Constants.Queries.QUERIES_SELECT_ARGS_EXTENSION = function() {
   // Add the quote mixin for the itemCount_ = 0 case.
-  this.mixin(Blockly.Constants.EnvVariables.QUOTE_IMAGE_MIXIN);
+  this.mixin(Blockly.Constants.Queries.QUOTE_IMAGE_MIXIN);
   // Initialize the mutator values.
   this.itemCount_ = 2;
   this.updateShape_();
   // Configure the mutator UI.
-  this.setMutator(new Blockly.Mutator(['envvar_create_args_item']));
+  this.setMutator(new Blockly.Mutator(['queries_select_args_item']));
 };
 
-Blockly.Extensions.registerMutator('envvar_method_args_mutator',
-    Blockly.Constants.EnvVariables.ENVVAR_METHOD_ARGS_MUTATOR_MIXIN,
-    Blockly.Constants.EnvVariables.ENVVAR_METHOD_ARGS_EXTENSION);
+Blockly.Extensions.registerMutator('queries_select_args_mutator',
+    Blockly.Constants.Queries.QUERIES_SELECT_ARGS_MUTATOR_MIXIN,
+    Blockly.Constants.Queries.QUERIES_SELECT_ARGS_EXTENSION);

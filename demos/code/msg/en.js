@@ -14,6 +14,7 @@ var MSG = {
   catColour: "Colour",
   catVariables: "Variables",
   catFunctions: "Functions",
+  catQueries: "Queries",
   catEnvVar: "XWiki Variables",
   listVariable: "list",
   textVariable: "text",
