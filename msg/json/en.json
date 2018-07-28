@@ -1,7 +1,7 @@
 {
 	"@metadata": {
 		"author": "Ellen Spertus <ellen.spertus@gmail.com>",
-		"lastupdated": "2018-07-26 16:58:09.817636",
+		"lastupdated": "2018-07-28 14:12:34.853650",
 		"locale": "en",
 		"messagedocumentation" : "qqq"
 	},
@@ -418,7 +418,20 @@
 	"QUERIES_SELECT_ARGS_CONTAINER_TOOLTIP": "Add, remove, or reorder sections to reconfigure this text block.",
 	"QUERIES_SELECT_ARGS_ITEM_TITLE": "Item",
 	"QUERIES_SELECT_ARGS_ITEM_TOOLTIP": "Add an object to the select statement.",
+	"QUERIES_FROM_ARGS_HELPURL": "https://docs.jboss.org/hibernate/orm/3.5/reference/en/html/queryhql.html#queryhql-from",
+	"QUERIES_FROM_ARGS_TOOLTIP": "The from clause specifies which class to return from.",
+	"QUERIES_FROM_ARGS_CREATEWITH": "From Clause Arguments",
+	"QUERIES_FROM_ARGS_TITLE": "Add arguments",
+	"QUERIES_FROM_ARGS_CONTAINER_TOOLTIP": "Add, remove, or reorder sections to reconfigure this text block.",
+	"QUERIES_FROM_ARGS_ITEM_TITLE": "Item",
+	"QUERIES_FROM_ARGS_ITEM_TOOLTIP": "Add an object to the from statement.",
 	"QUERIES_DISTINCT_HELPURL": "https://docs.jboss.org/hibernate/orm/3.5/reference/en/html/queryhql.html#queryhql-select",
 	"QUERIES_DISTINCT_TOOLTIP": "The distinct statement is used to return only distinct (different) values.",
+	"QUERIES_XOBJECT_HELPURL": "https://extensions.xwiki.org/xwiki/bin/view/Extension/Query%20Module",
+	"QUERIES_XOBJECT_TOOLTIP": "Special syntax is used for XWiki objects in HQL in from and where clauses:",
+	"QUERIES_OBJECT_HELPURL": "http://velocity.apache.org/engine/1.7/vtl-reference.html#properties",
+	"QUERIES_OBJECT_TOOLTIP": "To access objects and their attributes in HQL",
+	"QUERIES_AS_TOOLTIP": "https://docs.jboss.org/hibernate/orm/3.5/reference/en/html/queryhql.html#queryhql-from",
+	"QUERIES_AS_HELPURL": "This keyword assigns an alias so that it can be used later in the query",
 	"WORKSPACE_COMMENT_DEFAULT_TEXT": "Say something..."
 }

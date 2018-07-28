@@ -1252,10 +1252,44 @@ Blockly.Msg.QUERIES_SELECT_ARGS_ITEM_TITLE = 'Item';
 /// tooltip
 Blockly.Msg.QUERIES_SELECT_ARGS_ITEM_TOOLTIP = 'Add an object to the select statement.';
 
+/// {{Optional}} url - Information about how to write from statement in HQL https://docs.jboss.org/hibernate/orm/3.5/reference/en/html/queryhql.html#queryhql-from
+Blockly.Msg.QUERIES_FROM_ARGS_HELPURL = 'https://docs.jboss.org/hibernate/orm/3.5/reference/en/html/queryhql.html#queryhql-from';
+/// tooltip
+Blockly.Msg.QUERIES_FROM_ARGS_TOOLTIP = 'The from clause specifies which class to return from.';
+
+/// block text
+Blockly.Msg.QUERIES_FROM_ARGS_CREATEWITH = 'From Clause Arguments';
+
+/// block text - This is shown when the programmer wants to change the number of arguments being passed to the from query.
+Blockly.Msg.QUERIES_FROM_ARGS_TITLE = 'Add arguments';
+/// tooltip
+Blockly.Msg.QUERIES_FROM_ARGS_CONTAINER_TOOLTIP = 'Add, remove, or reorder sections to reconfigure this text block.';
+
+/// block text
+Blockly.Msg.QUERIES_FROM_ARGS_ITEM_TITLE = 'Item';
+/// tooltip
+Blockly.Msg.QUERIES_FROM_ARGS_ITEM_TOOLTIP = 'Add an object to the from statement.';
+
 /// {{Optional}} url - Information about how to use distinct keyword in HQL https://docs.jboss.org/hibernate/orm/3.5/reference/en/html/queryhql.html#queryhql-aggregation
 Blockly.Msg.QUERIES_DISTINCT_HELPURL = 'https://docs.jboss.org/hibernate/orm/3.5/reference/en/html/queryhql.html#queryhql-select';
 /// tooltip
 Blockly.Msg.QUERIES_DISTINCT_TOOLTIP = 'The distinct statement is used to return only distinct (different) values.';
+
+/// {{Optional}} url - Information about retrieve XObject
+Blockly.Msg.QUERIES_XOBJECT_HELPURL = 'https://extensions.xwiki.org/xwiki/bin/view/Extension/Query%20Module';
+/// tooltip
+Blockly.Msg.QUERIES_XOBJECT_TOOLTIP = 'Special syntax is used for XWiki objects in HQL in from and where clauses:';
+
+/// {{Optional}} url - Information about properties (http://velocity.apache.org/engine/1.7/vtl-reference.html#properties) in Velocity 
+Blockly.Msg.QUERIES_OBJECT_HELPURL = 'http://velocity.apache.org/engine/1.7/vtl-reference.html#properties';
+/// tooltip
+Blockly.Msg.QUERIES_OBJECT_TOOLTIP = 'To access objects and their attributes in HQL';
+
+/// {{Optional}} url - Information about how to use the as keyword in HQL https://docs.jboss.org/hibernate/orm/3.5/reference/en/html/queryhql.html#queryhql-from
+Blockly.Msg.QUERIES_AS_TOOLTIP = 'https://docs.jboss.org/hibernate/orm/3.5/reference/en/html/queryhql.html#queryhql-from';
+/// tooltip
+Blockly.Msg.QUERIES_AS_HELPURL = 'This keyword assigns an alias so that it can be used later in the query';
+
 
 /// comment text - This text appears in a new workspace comment, to hint that
 /// the user can type here.
