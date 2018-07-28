@@ -1234,41 +1234,23 @@ Blockly.Msg.ENVVAR_METHOD_CREATE_ARG_TOOLTIP = 'Add an argument to the function.
 
 
 // Query blocks
-/// {{Optional}} url - Information about how to write select statement in HQL https://docs.jboss.org/hibernate/orm/3.5/reference/en/html/queryhql.html#queryhql-select
-Blockly.Msg.QUERIES_SELECT_ARGS_HELPURL = 'https://docs.jboss.org/hibernate/orm/3.5/reference/en/html/queryhql.html#queryhql-select';
+/// {{Optional}} url - Information about how to write select statement in HQL https://docs.jboss.org/hibernate/orm/3.5/reference/en/html/queryhql.html
+Blockly.Msg.QUERIES_ARGS_HELPURL = 'https://docs.jboss.org/hibernate/orm/3.5/reference/en/html/queryhql.html';
 /// tooltip
-Blockly.Msg.QUERIES_SELECT_ARGS_TOOLTIP = 'The select clause picks which objects and properties to return in the query result set.';
+Blockly.Msg.QUERIES_ARGS_TOOLTIP = 'The list of arguments to be supplied to the select/from statement';
 
 /// block text
-Blockly.Msg.QUERIES_SELECT_ARGS_CREATEWITH = 'Select Clause Arguments';
+Blockly.Msg.QUERIES_ARGS_CREATEWITH = 'Arguments';
 
 /// block text - This is shown when the programmer wants to change the number of arguments being passed to the select query.
-Blockly.Msg.QUERIES_SELECT_ARGS_TITLE = 'Add arguments';
+Blockly.Msg.QUERIES_ARGS_TITLE = 'Add arguments';
 /// tooltip
-Blockly.Msg.QUERIES_SELECT_ARGS_CONTAINER_TOOLTIP = 'Add, remove, or reorder sections to reconfigure this text block.';
+Blockly.Msg.QUERIES_ARGS_CONTAINER_TOOLTIP = 'Add, remove, or reorder sections to reconfigure this text block.';
 
 /// block text
-Blockly.Msg.QUERIES_SELECT_ARGS_ITEM_TITLE = 'Item';
+Blockly.Msg.QUERIES_ARGS_ITEM_TITLE = 'Item';
 /// tooltip
-Blockly.Msg.QUERIES_SELECT_ARGS_ITEM_TOOLTIP = 'Add an object to the select statement.';
-
-/// {{Optional}} url - Information about how to write from statement in HQL https://docs.jboss.org/hibernate/orm/3.5/reference/en/html/queryhql.html#queryhql-from
-Blockly.Msg.QUERIES_FROM_ARGS_HELPURL = 'https://docs.jboss.org/hibernate/orm/3.5/reference/en/html/queryhql.html#queryhql-from';
-/// tooltip
-Blockly.Msg.QUERIES_FROM_ARGS_TOOLTIP = 'The from clause specifies which class to return from.';
-
-/// block text
-Blockly.Msg.QUERIES_FROM_ARGS_CREATEWITH = 'From Clause Arguments';
-
-/// block text - This is shown when the programmer wants to change the number of arguments being passed to the from query.
-Blockly.Msg.QUERIES_FROM_ARGS_TITLE = 'Add arguments';
-/// tooltip
-Blockly.Msg.QUERIES_FROM_ARGS_CONTAINER_TOOLTIP = 'Add, remove, or reorder sections to reconfigure this text block.';
-
-/// block text
-Blockly.Msg.QUERIES_FROM_ARGS_ITEM_TITLE = 'Item';
-/// tooltip
-Blockly.Msg.QUERIES_FROM_ARGS_ITEM_TOOLTIP = 'Add an object to the from statement.';
+Blockly.Msg.QUERIES_ARGS_ITEM_TOOLTIP = 'Adds an argument to the args list.';
 
 /// {{Optional}} url - Information about how to use distinct keyword in HQL https://docs.jboss.org/hibernate/orm/3.5/reference/en/html/queryhql.html#queryhql-aggregation
 Blockly.Msg.QUERIES_DISTINCT_HELPURL = 'https://docs.jboss.org/hibernate/orm/3.5/reference/en/html/queryhql.html#queryhql-select';
@@ -1285,11 +1267,35 @@ Blockly.Msg.QUERIES_OBJECT_HELPURL = 'http://velocity.apache.org/engine/1.7/vtl-
 /// tooltip
 Blockly.Msg.QUERIES_OBJECT_TOOLTIP = 'To access objects and their attributes in HQL';
 
-/// {{Optional}} url - Information about how to use the as keyword in HQL https://docs.jboss.org/hibernate/orm/3.5/reference/en/html/queryhql.html#queryhql-from
-Blockly.Msg.QUERIES_AS_TOOLTIP = 'https://docs.jboss.org/hibernate/orm/3.5/reference/en/html/queryhql.html#queryhql-from';
+/// {{Optional}} url - Information about how to use the as keyword in HQL https://docs.jboss.org/hibernate/orm/3.3/reference/en/html/queryhql.html#queryhql-from
+Blockly.Msg.QUERIES_AS_HELPURL = 'https://docs.jboss.org/hibernate/orm/3.3/reference/en/html/queryhql.html#queryhql-from';
 /// tooltip
-Blockly.Msg.QUERIES_AS_HELPURL = 'This keyword assigns an alias so that it can be used later in the query';
+Blockly.Msg.QUERIES_AS_TOOLTIP = 'This keyword assigns an alias so that it can be used later in the query';
 
+/// {{Optional}} url - Information about expressions used in HQL, including the NOT operator https://docs.jboss.org/hibernate/orm/3.3/reference/en/html/queryhql.html#queryhql-expressions
+Blockly.Msg.QUERIES_NOT_HELPURL = 'https://docs.jboss.org/hibernate/orm/3.3/reference/en/html/queryhql.html#queryhql-expressions';
+/// tooltip
+Blockly.Msg.QUERIES_NOT_TOOLTIP = 'This operator returns the boolean compliment of the expression.';
+
+/// {{Optional}} url - Information about expressions used in HQL, including the AND and OR operators https://docs.jboss.org/hibernate/orm/3.3/reference/en/html/queryhql.html#queryhql-expressions
+Blockly.Msg.QUERIES_ANDOR_HELPURL = 'https://docs.jboss.org/hibernate/orm/3.3/reference/en/html/queryhql.html#queryhql-expressions';
+/// tooltip
+Blockly.Msg.QUERIES_ANDOR_TOOLTIP = 'This block returns the boolean AND/OR of the two expressions';
+
+/// {{Optional}} url - Information about expressions used in HQL, including the comparison operators https://docs.jboss.org/hibernate/orm/3.3/reference/en/html/queryhql.html#queryhql-expressions
+Blockly.Msg.QUERIES_COMPARISON_HELPURL = 'https://docs.jboss.org/hibernate/orm/3.3/reference/en/html/queryhql.html#queryhql-expressions';
+/// tooltip
+Blockly.Msg.QUERIES_COMPARISON_TOOLTIP = 'Used for comparison of two expressions';
+
+/// {{Optional}} url - Information about select, from and where clauses used in HQL
+Blockly.Msg.QUERIES_MAIN_HELPURL = 'https://docs.jboss.org/hibernate/orm/3.3/reference/en/html/queryhql.html';
+/// tooltip
+Blockly.Msg.QUERIES_MAIN_TOOLTIP = 'Used to construct the query. Contains SELECT, FROM and WHERE clauses';
+
+/// {{Optional}} url - Information about how to execute the constructed HQL query
+Blockly.Msg.QUERIES_EXECUTE_HELPURL = 'https://extensions.xwiki.org/xwiki/bin/view/Extension/Query%20Module#HFromVelocity';
+/// tooltip
+Blockly.Msg.QUERIES_EXECUTE_TOOLTIP = 'A block to execute the query after constructing it';
 
 /// comment text - This text appears in a new workspace comment, to hint that
 /// the user can type here.
