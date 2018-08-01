@@ -116,7 +116,7 @@ Blockly.Velocity['queries_main'] = function(block) {
 Blockly.Velocity['queries_execute'] = function(block) {
   // Query execution
   var query = Blockly.Velocity.valueToCode(block, 'QUERIES_EXECUTE_BLOCK', Blockly.Velocity.ORDER_ATOMIC) || 'false';
-  var code = "$services.query.hql(\"" + query + "\").execute()\n"
+  var code = "$services.query.xwql(\"" + query + "\").execute()\n"
   return [code, Blockly.Velocity.ORDER_ATOMIC];
 };
 
