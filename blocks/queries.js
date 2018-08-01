@@ -274,6 +274,101 @@ Blockly.defineBlocksWithJsonArray([  // BEGIN JSON EXTRACT
     "colour": "%{BKY_QUERIES_HUE}",
     "tooltip": "%{BKY_QUERIES_EXECUTE_TOOLTIP}",
     "helpUrl": "%{BKY_QUERIES_EXECUTE_HELPURL}"
+  },
+  {
+    "type": "queries_like",
+    "message0": "Any %1 String %2 Any %3 %4",
+    "args0": [
+      {
+        "type": "field_checkbox",
+        "name": "QUERIES_LIKE_ANY_START",
+        "checked": true
+      },
+      {
+        "type": "field_input",
+        "name": "QUERIES_LIKE_PHRASE",
+        "text": ""
+      },
+      {
+        "type": "field_checkbox",
+        "name": "QUERIES_LIKE_ANY_END",
+        "checked": true
+      },
+      {
+        "type": "input_value",
+        "name": "QUERIES_LIKE_CLAUSE"
+      }
+    ],
+    "output": null,
+    "colour": "%{BKY_COLOUR_HUE}",
+    "tooltip": "%{BKY_QUERIES_LIKE_TOOLTIP}",
+    "helpUrl": "%{BKY_QUERIES_LIKE_HELPURL}"
+  },
+  {
+    "type": "queries_like",
+    "message0": "LIKE CLAUSE %1 Any %2 String %3 Any %4 %5",
+    "args0": [
+      {
+        "type": "input_dummy"
+      },
+      {
+        "type": "field_checkbox",
+        "name": "QUERIES_LIKE_ANY_START",
+        "checked": true
+      },
+      {
+        "type": "field_input",
+        "name": "QUERIES_LIKE_PHRASE",
+        "text": ""
+      },
+      {
+        "type": "field_checkbox",
+        "name": "QUERIES_LIKE_ANY_END",
+        "checked": true
+      },
+      {
+        "type": "input_value",
+        "name": "QUERIES_LIKE_CLAUSE"
+      }
+    ],
+    "output": null,
+    "colour": "%{BKY_COLOUR_HUE}",
+    "tooltip": "%{BKY_QUERIES_LIKE_TOOLTIP}",
+    "helpUrl": "%{BKY_QUERIES_LIKE_HELPURL}"
+  },
+  {
+    "type": "queries_order",
+    "message0": "Order by Property %1 %2 %3",
+    "args0": [
+      {
+        "type": "input_value",
+        "name": "QUERIES_ORDER_BY"
+      },
+      {
+        "type": "field_dropdown",
+        "name": "QUERIES_ORDER_TYPE",
+        "options": [
+          [
+            "Ascending",
+            "asc"
+          ],
+          [
+            "Descending",
+            "desc"
+          ]
+        ]
+      },
+      {
+        "type": "input_value",
+        "name": "QUERIES_ORDER_CLAUSE",
+        "align": "CENTRE"
+      }
+    ],
+    "inputsInline": false,
+    "output": null,
+    "colour": "%{BKY_QUERIES_HUE}",
+    "tooltip": "%{BKY_QUERIES_ORDER_TOOLTIP}",
+    "helpUrl": "%{BKY_QUERIES_ORDER_HELPURL}"
   }
 ]);  // END JSON EXTRACT (Do not delete this comment.)
 

@@ -1234,7 +1234,7 @@ Blockly.Msg.ENVVAR_METHOD_CREATE_ARG_TOOLTIP = 'Add an argument to the function.
 
 
 // Query blocks
-/// {{Optional}} url - Information about how to write select statement in HQL https://docs.jboss.org/hibernate/orm/3.5/reference/en/html/queryhql.html
+/// {{Optional}} url - Information about how to write select statement in XWQL https://docs.jboss.org/hibernate/orm/3.5/reference/en/html/queryhql.html
 Blockly.Msg.QUERIES_ARGS_HELPURL = 'https://docs.jboss.org/hibernate/orm/3.5/reference/en/html/queryhql.html';
 /// tooltip
 Blockly.Msg.QUERIES_ARGS_TOOLTIP = 'The list of arguments to be supplied to the select/from statement';
@@ -1252,7 +1252,7 @@ Blockly.Msg.QUERIES_ARGS_ITEM_TITLE = 'Item';
 /// tooltip
 Blockly.Msg.QUERIES_ARGS_ITEM_TOOLTIP = 'Adds an argument to the args list.';
 
-/// {{Optional}} url - Information about how to use distinct keyword in HQL https://docs.jboss.org/hibernate/orm/3.5/reference/en/html/queryhql.html#queryhql-aggregation
+/// {{Optional}} url - Information about how to use distinct keyword in XWQL https://docs.jboss.org/hibernate/orm/3.5/reference/en/html/queryhql.html#queryhql-aggregation
 Blockly.Msg.QUERIES_DISTINCT_HELPURL = 'https://docs.jboss.org/hibernate/orm/3.5/reference/en/html/queryhql.html#queryhql-select';
 /// tooltip
 Blockly.Msg.QUERIES_DISTINCT_TOOLTIP = 'The distinct statement is used to return only distinct (different) values.';
@@ -1260,39 +1260,50 @@ Blockly.Msg.QUERIES_DISTINCT_TOOLTIP = 'The distinct statement is used to return
 /// {{Optional}} url - Information about retrieve XObject
 Blockly.Msg.QUERIES_XOBJECT_HELPURL = 'https://extensions.xwiki.org/xwiki/bin/view/Extension/Query%20Module';
 /// tooltip
-Blockly.Msg.QUERIES_XOBJECT_TOOLTIP = 'Special syntax is used for XWiki objects in HQL in from and where clauses:';
+Blockly.Msg.QUERIES_XOBJECT_TOOLTIP = 'Special syntax is used for XWiki objects in XWQL in from and where clauses:';
 
 /// {{Optional}} url - Information about properties (http://velocity.apache.org/engine/1.7/vtl-reference.html#properties) in Velocity 
 Blockly.Msg.QUERIES_OBJECT_HELPURL = 'http://velocity.apache.org/engine/1.7/vtl-reference.html#properties';
 /// tooltip
-Blockly.Msg.QUERIES_OBJECT_TOOLTIP = 'To access objects and their attributes in HQL';
+Blockly.Msg.QUERIES_OBJECT_TOOLTIP = 'To access objects and their attributes in XWQL';
 
-/// {{Optional}} url - Information about how to use the as keyword in HQL https://docs.jboss.org/hibernate/orm/3.3/reference/en/html/queryhql.html#queryhql-from
+/// {{Optional}} url - Information about how to use the as keyword in XWQL https://docs.jboss.org/hibernate/orm/3.3/reference/en/html/queryhql.html#queryhql-from
 Blockly.Msg.QUERIES_AS_HELPURL = 'https://docs.jboss.org/hibernate/orm/3.3/reference/en/html/queryhql.html#queryhql-from';
 /// tooltip
 Blockly.Msg.QUERIES_AS_TOOLTIP = 'This keyword assigns an alias so that it can be used later in the query';
 
-/// {{Optional}} url - Information about expressions used in HQL, including the NOT operator https://docs.jboss.org/hibernate/orm/3.3/reference/en/html/queryhql.html#queryhql-expressions
+/// {{Optional}} url - Information about expressions used in XWQL, including the NOT operator https://docs.jboss.org/hibernate/orm/3.3/reference/en/html/queryhql.html#queryhql-expressions
 Blockly.Msg.QUERIES_NOT_HELPURL = 'https://docs.jboss.org/hibernate/orm/3.3/reference/en/html/queryhql.html#queryhql-expressions';
 /// tooltip
 Blockly.Msg.QUERIES_NOT_TOOLTIP = 'This operator returns the boolean compliment of the expression.';
 
-/// {{Optional}} url - Information about expressions used in HQL, including the AND and OR operators https://docs.jboss.org/hibernate/orm/3.3/reference/en/html/queryhql.html#queryhql-expressions
+/// {{Optional}} url - Information about expressions used in XWQL, including the AND and OR operators https://docs.jboss.org/hibernate/orm/3.3/reference/en/html/queryhql.html#queryhql-expressions
 Blockly.Msg.QUERIES_ANDOR_HELPURL = 'https://docs.jboss.org/hibernate/orm/3.3/reference/en/html/queryhql.html#queryhql-expressions';
 /// tooltip
 Blockly.Msg.QUERIES_ANDOR_TOOLTIP = 'This block returns the boolean AND/OR of the two expressions';
 
-/// {{Optional}} url - Information about expressions used in HQL, including the comparison operators https://docs.jboss.org/hibernate/orm/3.3/reference/en/html/queryhql.html#queryhql-expressions
+/// {{Optional}} url - Information about expressions used in XWQL, including the comparison operators https://docs.jboss.org/hibernate/orm/3.3/reference/en/html/queryhql.html#queryhql-expressions
 Blockly.Msg.QUERIES_COMPARISON_HELPURL = 'https://docs.jboss.org/hibernate/orm/3.3/reference/en/html/queryhql.html#queryhql-expressions';
 /// tooltip
 Blockly.Msg.QUERIES_COMPARISON_TOOLTIP = 'Used for comparison of two expressions';
 
-/// {{Optional}} url - Information about select, from and where clauses used in HQL
+/// {{Optional}} url - Information about the like operators used in XWQL https://docs.jboss.org/hibernate/orm/3.3/reference/en/html/queryhql.html#queryhql-expressions
+Blockly.Msg.QUERIES_LIKE_HELPURL = 'https://docs.jboss.org/hibernate/orm/3.3/reference/en/html/queryhql.html#queryhql-joins-forms';
+/// tooltip
+Blockly.Msg.QUERIES_LIKE_TOOLTIP = 'The LIKE operator is used in a WHERE clause to search for a specified pattern';
+
+/// {{Optional}} url - Information about the order by clause used in XWQL https://docs.jboss.org/hibernate/orm/3.3/reference/en/html/queryhql.html#queryhql-expressions
+Blockly.Msg.QUERIES_ORDER_HELPURL = 'https://docs.jboss.org/hibernate/orm/3.3/reference/en/html/queryhql.html#queryhql-ordering';
+/// tooltip
+Blockly.Msg.QUERIES_ORDER_TOOLTIP = 'The list returned by a query can be ordered by any property of a returned class or components';
+
+
+/// {{Optional}} url - Information about select, from and where clauses used in XWQL
 Blockly.Msg.QUERIES_MAIN_HELPURL = 'https://docs.jboss.org/hibernate/orm/3.3/reference/en/html/queryhql.html';
 /// tooltip
 Blockly.Msg.QUERIES_MAIN_TOOLTIP = 'Used to construct the query. Contains SELECT, FROM and WHERE clauses';
 
-/// {{Optional}} url - Information about how to execute the constructed HQL query
+/// {{Optional}} url - Information about how to execute the constructed XWQL query
 Blockly.Msg.QUERIES_EXECUTE_HELPURL = 'https://extensions.xwiki.org/xwiki/bin/view/Extension/Query%20Module#HFromVelocity';
 /// tooltip
 Blockly.Msg.QUERIES_EXECUTE_TOOLTIP = 'A block to execute the query after constructing it';

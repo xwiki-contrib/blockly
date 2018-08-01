@@ -1,7 +1,7 @@
 {
 	"@metadata": {
 		"author": "Ellen Spertus <ellen.spertus@gmail.com>",
-		"lastupdated": "2018-07-29 04:07:47.025700",
+		"lastupdated": "2018-08-01 21:03:36.607792",
 		"locale": "en",
 		"messagedocumentation" : "qqq"
 	},
@@ -421,9 +421,9 @@
 	"QUERIES_DISTINCT_HELPURL": "https://docs.jboss.org/hibernate/orm/3.5/reference/en/html/queryhql.html#queryhql-select",
 	"QUERIES_DISTINCT_TOOLTIP": "The distinct statement is used to return only distinct (different) values.",
 	"QUERIES_XOBJECT_HELPURL": "https://extensions.xwiki.org/xwiki/bin/view/Extension/Query%20Module",
-	"QUERIES_XOBJECT_TOOLTIP": "Special syntax is used for XWiki objects in HQL in from and where clauses:",
+	"QUERIES_XOBJECT_TOOLTIP": "Special syntax is used for XWiki objects in XWQL in from and where clauses:",
 	"QUERIES_OBJECT_HELPURL": "http://velocity.apache.org/engine/1.7/vtl-reference.html#properties",
-	"QUERIES_OBJECT_TOOLTIP": "To access objects and their attributes in HQL",
+	"QUERIES_OBJECT_TOOLTIP": "To access objects and their attributes in XWQL",
 	"QUERIES_AS_HELPURL": "https://docs.jboss.org/hibernate/orm/3.3/reference/en/html/queryhql.html#queryhql-from",
 	"QUERIES_AS_TOOLTIP": "This keyword assigns an alias so that it can be used later in the query",
 	"QUERIES_NOT_HELPURL": "https://docs.jboss.org/hibernate/orm/3.3/reference/en/html/queryhql.html#queryhql-expressions",
@@ -432,6 +432,10 @@
 	"QUERIES_ANDOR_TOOLTIP": "This block returns the boolean AND/OR of the two expressions",
 	"QUERIES_COMPARISON_HELPURL": "https://docs.jboss.org/hibernate/orm/3.3/reference/en/html/queryhql.html#queryhql-expressions",
 	"QUERIES_COMPARISON_TOOLTIP": "Used for comparison of two expressions",
+	"QUERIES_LIKE_HELPURL": "https://docs.jboss.org/hibernate/orm/3.3/reference/en/html/queryhql.html#queryhql-joins-forms",
+	"QUERIES_LIKE_TOOLTIP": "The LIKE operator is used in a WHERE clause to search for a specified pattern",
+	"QUERIES_ORDER_HELPURL": "https://docs.jboss.org/hibernate/orm/3.3/reference/en/html/queryhql.html#queryhql-ordering",
+	"QUERIES_ORDER_TOOLTIP": "The list returned by a query can be ordered by any property of a returned class or components",
 	"QUERIES_MAIN_HELPURL": "https://docs.jboss.org/hibernate/orm/3.3/reference/en/html/queryhql.html",
 	"QUERIES_MAIN_TOOLTIP": "Used to construct the query. Contains SELECT, FROM and WHERE clauses",
 	"QUERIES_EXECUTE_HELPURL": "https://extensions.xwiki.org/xwiki/bin/view/Extension/Query%20Module#HFromVelocity",

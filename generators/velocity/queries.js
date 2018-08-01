@@ -81,6 +81,29 @@ Blockly.Velocity['queries_as'] = function(block) {
   return [code, Blockly.Velocity.ORDER_ATOMIC];
 };
 
+Blockly.Velocity['queries_order'] = function(block) {
+  // Order type
+  var order = block.getFieldValue('QUERIES_ORDER_TYPE');
+  // Order by property
+  var property = Blockly.Velocity.valueToCode(block, 'QUERIES_ORDER_BY', Blockly.Velocity.ORDER_ATOMIC) || '';;
+  var order_clause = property ? "order by " + property + " " + order : property;
+  var query = Blockly.Velocity.valueToCode(block, 'QUERIES_ORDER_CLAUSE', Blockly.Velocity.ORDER_ATOMIC) || '';
+  var code = query + " " + order_clause;
+  return [code, Blockly.Velocity.ORDER_ATOMIC];
+};
+
+
+Blockly.Velocity['queries_like'] = function(block) {
+  var beg = (block.getFieldValue('QUERIES_LIKE_ANY_START') == 'TRUE')?"%":"";
+  var end = (block.getFieldValue('QUERIES_LIKE_ANY_END') == 'TRUE')?"%":"";
+  // Like phrase name
+  var like = block.getFieldValue('QUERIES_LIKE_PHRASE') || "";
+  var like_clause = like ? "like \'" + beg+like+end + "\'" : "";
+  
+  var query = Blockly.Velocity.valueToCode(block, 'QUERIES_LIKE_CLAUSE', Blockly.Velocity.ORDER_ATOMIC) || '';
+  var code = query + " " + like_clause;
+  return [code, Blockly.Velocity.ORDER_ATOMIC];
+};
 
 Blockly.Velocity['queries_andor'] = function(block) {
   // And/Or keyword
